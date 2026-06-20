@@ -1,0 +1,28 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "products"
+    label: "JBG Apparel Inventory"
+    folder: "content/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Product Name", name: "title", widget: "string"}
+      - {label: "Price", name: "price", widget: "string"}
+      - {label: "Product Image", name: "image", widget: "image"}
+      - {label: "Description", name: "body", widget: "markdown"}
+
+  - name: "marketing"
+    label: "Marketing Content & Media"
+    folder: "content/marketing"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Campaign Name", name: "title", widget: "string"}
+      - {label: "YouTube Featured Video Link", name: "video_url", widget: "string"}
+      - {label: "Promo Banner Text", name: "banner_text", widget: "string"}

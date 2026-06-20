@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THEE ROYAL BRAND</title>
+    <!-- Premium Fonts: Syne for heavy luxury headers, Inter for clean readable text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --surface: #121212;
+            --border: #222222;
+            --accent: #ffffff;
+            --muted: #8a8a8a;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            background: var(--bg); 
+            color: var(--accent); 
+            font-family: 'Inter', sans-serif; 
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Luxury Navigation Bar */
+        nav { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            padding: 30px 5%; 
+            border-bottom: 1px solid var(--border); 
+            position: sticky; 
+            top: 0; 
+            background: rgba(10, 10, 10, 0.95); 
+            backdrop-filter: blur(10px);
+            z-index: 100; 
+        }
+        
+        nav .logo { 
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 1.4rem; 
+            letter-spacing: -1px; 
+        }
+        
+        nav .links a { 
+            color: var(--accent); 
+            text-decoration: none; 
+            margin-left: 30px; 
+            font-size: 0.85rem; 
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+        nav .links a:hover { color: var(--muted); }
+
+        /* Cinematic Hero Video Window */
+        .hero { 
+            position: relative; 
+            height: 90vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            border-bottom: 1px solid var(--border);
+            background: #000;
+        }
+        
+        /* Once video drops, swap this placeholder background for a true silent loop background video */
+        .hero-video-placeholder {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.9) 100%), url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1974&auto=format&fit=crop') center/cover no-repeat;
+            filter: grayscale(100%) brightness(0.3);
+            z-index: 1;
+        }
+        
+        .hero-content { 
+            position: relative; 
+            text-align: center; 
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero-content h1 { 
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 5rem; 
+            line-height: 0.9;
+            letter-spacing: -3px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--muted);
+            margin-bottom: 35px;
+            font-weight: 300;
+        }
+
+        /* Core Section Layouts */
+        .section { padding: 120px 5%; max-width: 1400px; margin: 0 auto; }
+        .section-header { margin-bottom: 60px; }
+        .section-tag { font-size: 0.8rem; color: var(--muted); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; font-weight: 600; }
+        .section-title { font-family: 'Syne', sans-serif; font-size: 2.5rem; letter-spacing: -1px; text-transform: uppercase; }
+        
+        /* Premium Grid Systems */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        
+        /* Luxury Product Cards */
+        .product-card { 
+            background: var(--surface);
+            border: 1px solid var(--border); 
+            padding: 20px; 
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+        .product-card:hover { 
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+        .product-card .img-container {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background: #1a1a1a;
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+        .product-card img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%); transition: transform 0.5s ease; }
+        .product-card:hover img { transform: scale(1.05); }
+        .product-card h3 { font-family: 'Syne', sans-serif; font-size: 1.2rem; margin-bottom: 8px; letter-spacing: -0.5px; }
+        .product-card .price { color: var(--muted); font-size: 0.95rem; margin-bottom: 20px; }
+
+        /* Polished Interaction Buttons */
+        .btn { 
+            display: inline-block;
+            background: var(--accent); 
+            color: var(--bg); 
+            border: 1px solid var(--accent);
+            padding: 18px 40px; 
+            font-size: 0.9rem;
+            font-weight: 600; 
+            letter-spacing: 1px;
+            cursor: pointer; 
+            text-transform: uppercase; 
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .btn:hover { background: transparent; color: var(--accent); }
+        .btn-outline { background: transparent; color: var(--accent); border: 1px solid var(--border); }
+        .btn-outline:hover { border-color: var(--accent); }
+
+        /* A&R Submission Section Split */
+        .split-layout { display: flex; gap: 80px; align-items: center; flex-wrap: wrap; }
+        .split-col { flex: 1; min-width: 320px; }
+
+        /* Form Styling */
+        form { display: flex; flex-direction: column; gap: 20px; }
+        input, textarea { 
+            background: var(--surface); 
+            border: 1px solid var(--border); 
+            padding: 20px; 
+            color: var(--accent); 
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: border-color 0.3s ease;
+        }
+        input:focus, textarea:focus { border-color: var(--accent); outline: none; }
+
+        /* Hidden Corporate Matrix Architecture */
+        .matrix-box {
+            background: linear-gradient(135deg, #111111 0%, #050505 100%);
+            border-left: 2px solid var(--accent);
+            padding: 40px;
+        }
+
+        @media(max-width: 768px) {
+            .hero-content h1 { font-size: 3rem; }
+            nav { padding: 20px 5%; }
+            .split-layout { gap: 40px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">THEE ROYAL BRAND</div>
+        <div class="links">
+            <a href="#shop">Apparel</a>
+            <a href="#music">Royalty Records</a>
+            <a href="#business">Enterprise</a>
+        </div>
+    </nav>
+
+    <!-- 1. Eye-Snatching Content Hub -->
+    <section class="hero">
+        <div class="hero-video-placeholder"></div>
+        <div class="hero-content">
+            <h1>TRAP GOD</h1>
+            <p>The highly anticipated cinematic release from independent artist King Ali. Premiering on YouTube June 26th.</p>
+            <a href="https://linktr.ee/theeroyalbrand" class="btn" target="_blank">Subscribe to Premiere</a>
+        </div>
+    </section>
+
+    <!-- 2. JBG Apparel Focal Point -->
+    <section id="shop" class="section">
+        <div class="section-header">
+            <div class="section-tag">Featured Collection</div>
+            <div class="section-title">Just Be Great</div>
+        </div>
+        <div class="grid">
+            <div class="product-card">
+                <div class="img-container">
+                    <!-- Placeholder image - can be customized inside Decap CMS admin dashboard -->
+                    <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=1974&auto=format&fit=crop" alt="JBG Tee">
+                </div>
+                <h3>JBG Essential Mineral Wash Tee</h3>
+                <div class="price">$55.00</div>
+                <button class="btn" style="width: 100%; padding: 14px 0;">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Music Base: Royalty Records Portal -->
+    <section id="music" style="background: #070707; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+        <div class="section split-layout">
+            <div class="split-col">
+                <div class="section-tag">A&R Portal</div>
+                <div class="section-title" style="margin-bottom: 25px;">Royalty Records</div>
+                <p style="color: var(--muted); font-weight: 300; margin-bottom: 20px; text-transform: none;">
+                    We are actively hunting for pure talent, authentic perspectives, and driven artists to expand our roster. Submit your tracks or music video links directly to our production division.
+                </p>
+            </div>
+            <div class="split-col">
+                <form name="ar-submissions" method="POST" data-netlify="true">
+                    <input type="text" name="name" placeholder="Artist Name / Alias" required>
+                    <input type="email" name="email" placeholder="Contact Email" required>
+                    <input type="url" name="link" placeholder="Music Link (YouTube, SoundCloud, Audiomack)" required>
+                    <textarea name="message" rows="4" placeholder="Define your vision..."></textarea>
+                    <button type="submit" class="btn">Submit to Roster</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Hidden Corporate Framework Layer -->
+    <section id="business" class="section">
+        <div class="section-header">
+            <div class="section-tag">Corporate Architecture</div>
+            <div class="section-title">The Enterprise Ecosystem</div>
+        </div>
+        <div class="grid">
+            <div class="matrix-box">
+                <h3 style="font-family: 'Syne', sans-serif; font-size: 1.4rem; margin-bottom: 15px;">THE MATRIX</h3>
+                <p style="color: var(--muted); font-size: 0.95rem; font-weight: 300; text-transform: none;">
+                    A unified engine combining music production via Royalty Records, digital content network distribution through Better Than TV, and high-ticket luxury physical goods via Thee Royal Brand clothing.
+                </p>
+            </div>
+            <div class="matrix-box" style="border-color: var(--border);">
+                <h3 style="font-family: 'Syne', sans-serif; font-size: 1.4rem; margin-bottom: 15px;">STRATEGIC INQUIRIES</h3>
+                <p style="color: var(--muted); font-size: 0.95rem; font-weight: 300; text-transform: none; margin-bottom: 30px;">
+                    For capital allocations, brand development partnerships, scaling infrastructure placement, or physical operations management.
+                </p>
+                <a href="mailto:contact@theeroyalbrand.com" class="btn btn-outline" style="width: 100%; text-align: center;">Contact Management</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
+                }
+            });
+        }
+    </script>
+</body>
+</html>

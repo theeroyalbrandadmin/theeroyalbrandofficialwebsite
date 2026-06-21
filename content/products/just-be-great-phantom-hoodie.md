@@ -1,7 +1,7 @@
 ---
 title: Just Be Great "Phantom" Hoodie
 price: $250
-image: /images/uploads/jbg-hoodie-black.png
+image: /images/uploads/phantom-hoodie-carousel-.png
 details: Heavy Weight Cotton
 sizes:
   - Small

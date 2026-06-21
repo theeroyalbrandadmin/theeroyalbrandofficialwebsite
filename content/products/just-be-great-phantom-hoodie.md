@@ -2,6 +2,14 @@
 title: Just Be Great "Phantom" Hoodie
 price: $250
 image: /images/uploads/jbg-hoodie-black.png
+details: Heavy Weight Cotton
+sizes:
+  - Small
+  - Medium
+  - Large
+  - XL
+  - 2XL
+stock: In Stock
 ---
 Make a statement without saying a word. The "JUST BE GREAT" Heavyweight Hoodie is the ultimate fusion of luxury comfort and bold, high-end streetwear style. Engineered with a premium, dense fabric blend, this hoodie delivers that perfect structured drape, an oversized silhouette, and a cozy warmth that holds up season after season.
 

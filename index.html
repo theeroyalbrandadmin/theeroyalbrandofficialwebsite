@@ -283,6 +283,22 @@
                 }
             });
         }
+    </script><!-- DYNAMIC DASHBOARD SYNCHRONIZATION SCRIPT -->
+    <script>
+        // 1. Fetch and Display JBG Apparel Inventory Automatically
+        async function loadDashboardContent() {
+            try {
+                // Adjust this path if you change folder structures later
+                const shopGrid = document.querySelector('#shop .grid');
+                
+                // When you hit save in Decap, it creates a markdown/json file in your repository.
+                // We will connect your frontend layout elements right here next to loop your files!
+                console.log("Ecosystem connected. Awaiting database build files...");
+            } catch (error) {
+                console.error("Dashboard sync error:", error);
+            }
+        }
+        window.addEventListener('DOMContentLoaded', loadDashboardContent);
     </script>
 </body>
 </html>

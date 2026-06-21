@@ -15,7 +15,10 @@ collections:
       - {label: "Product Name", name: "title", widget: "string"}
       - {label: "Price", name: "price", widget: "string"}
       - {label: "Product Image", name: "image", widget: "image"}
-      - {label: "Description", name: "body", widget: "markdown"}
+      - {label: "Fabric & Texture Details", name: "details", widget: "string", hint: "e.g., Heavyweight Mineral Wash, Distressed Hems"}
+      - {label: "Available Sizes", name: "sizes", widget: "list", default: ["S", "M", "L", "XL", "2XL"]}
+      - {label: "Stock Status", name: "stock", widget: "select", options: ["In Stock", "Low Stock", "Pre-Order", "Sold Out"]}
+      - {label: "Product Description", name: "body", widget: "markdown"}
 
   - name: "marketing"
     label: "Marketing Content & Media"

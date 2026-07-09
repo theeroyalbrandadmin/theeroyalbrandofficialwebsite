@@ -68,8 +68,8 @@
     <section class="hero">
         <div class="hero-video-placeholder" id="hero-bg"></div>
         <div class="hero-content" id="hero-marketing">
-            <h1 id="campaign-title">TRAP GOD</h1>
-            <p id="campaign-text">The highly anticipated cinematic release from independent artist King Ali. Premiering on YouTube June 26th.</p>
+            <h1 id="campaign-title">JUST BE GREAT</h1>
+            <p id="campaign-text">Premium heavyweight street garments designed to elevate. Limited edition JBG tracksuits and Royaltees available now.</p>
             <a href="https://theeroyalbrandshop.bigcartel.com" id="campaign-btn" class="btn">SHOP THE DROP</a>
         </div>
     </section>
@@ -136,7 +136,7 @@
         async function fetchStudioData() {
             try {
                 // Fetch product listings directly out of your GitHub storage folder 
-                const response = await fetch('https://api.github.com/repos/theeroyalbrandadmin/theeroyalbrandofficialwebsite/contents/content/products');
+                const response = await fetch('https://api.github.com/repos/theeroyalbrandadmin/theeroyalbrandofficialwebsite/contents/content%2Fproducts');
                 if(!response.ok) throw new Error("No data files initialized yet.");
                 
                 const files = await response.json();

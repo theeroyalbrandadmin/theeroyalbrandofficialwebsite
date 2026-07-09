@@ -52,6 +52,20 @@
         .matrix-box { background: linear-gradient(135deg, #111111 0%, #050505 100%); border-left: 2px solid var(--accent); padding: 40px; }
         @media(max-width: 768px) { .hero-content h1 { font-size: 3rem; } nav { padding: 20px 5%; } .split-layout { gap: 40px; } }
     </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '948460501560263');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 
@@ -64,15 +78,16 @@
         </div>
     </nav>
 
-    <!-- 1. Eye-Snatching Content Hub -->
-    <section class="hero">
-        <div class="hero-video-placeholder" id="hero-bg"></div>
-        <div class="hero-content" id="hero-marketing">
-            <h1 id="campaign-title">JUST BE GREAT</h1>
-            <p id="campaign-text">Premium heavyweight street garments designed to elevate. Limited edition JBG tracksuits and Royaltees available now.</p>
-            <a href="https://theeroyalbrandshop.bigcartel.com" id="campaign-btn" class="btn">SHOP THE DROP</a>
-        </div>
-    </section>
+  <!-- 1. Eye-Snatching Content Hub -->
+<section class="hero">
+    <div class="hero-video-placeholder" id="hero-bg"></div>
+    <div class="hero-content" id="hero-marketing">
+        <!-- Removed dynamic IDs to stop old data from loading -->
+        <h1 style="font-family: inherit; font-weight: bold;">JUST BE GREAT</h1>
+        <p>Premium heavyweight street garments designed to elevate. Limited JBG tracksuits and Royaltees available now.</p>
+        <a href="https://theeroyalbrandshop.bigcartel.com" class="btn">SHOP THE DROP</a>
+    </div>
+</section>
 
     <!-- 2. JBG Apparel Focal Point -->
     <section id="shop" class="section">

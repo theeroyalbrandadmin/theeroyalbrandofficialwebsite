@@ -1,1 +1,1 @@
-\---title: "JUST BE GREAT CREAM ROYALTEE"price: "$65"image: "images/uploads/JUST BE GREAT ROYALTEE"collection: "JUST BE GREAT"\---
+\---title: "JUST BE GREAT ROYALTEE"price: "$65"image: "images/uploads/JUST BE GREAT ROYALTEE"collection: "JUST BE GREAT"\---

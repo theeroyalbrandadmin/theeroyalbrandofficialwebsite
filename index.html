@@ -17,7 +17,7 @@
             --muted: #8a8a8a;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; }
-<script async src="https://static.slicktext.com/forms/scripts/embed/eyJ1cmwiOiJodHRwczpcL1wvc3Rmb3Jtcy5jb1wvMzA0MjJjMGZiYjU3MzY5OTAwN2EyZDEyOTNkMDIyMjMifQ"></script> body { background: var(--bg); color: var(--accent); font-family: 'Inter', sans-serif; overflow-x: hidden; line-height: 1.6; }
+        body { background: var(--bg); color: var(--accent); font-family: 'Inter', sans-serif; overflow-x: hidden; line-height: 1.6; }
         nav { display: flex; justify-content: space-between; align-items: center; padding: 30px 5%; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(10, 10, 10, 0.95); backdrop-filter: blur(10px); z-index: 100; }
         nav .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.4rem; letter-spacing: -1px; text-transform: uppercase; }
         nav .links a { color: var(--accent); text-decoration: none; margin-left: 30px; font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s ease; }
@@ -49,6 +49,8 @@
         form { display: flex; flex-direction: column; gap: 20px; }
         input, textarea { background: var(--surface); border: 1px solid var(--border); padding: 20px; color: var(--accent); font-family: 'Inter', sans-serif; font-size: 0.95rem; transition: border-color 0.3s ease; }
         input:focus, textarea:focus { border-color: var(--accent); outline: none; }
+        .royal-club-form { background: var(--surface); border: 1px solid var(--border); padding: 10px; min-height: 300px; }
+        .royal-club-form iframe { display: block; width: 100%; border: 0; }
         .matrix-box { background: linear-gradient(135deg, #111111 0%, #050505 100%); border-left: 2px solid var(--accent); padding: 40px; }
         @media(max-width: 768px) { .hero-content h1 { font-size: 3rem; } nav { padding: 20px 5%; } .split-layout { gap: 40px; } }
     </style>
@@ -66,6 +68,15 @@ fbq('init', '948460501560263');
 fbq('track', 'PageView');
 </script>
 <!-- End Meta Pixel Code -->
+<!-- Begin SlickText Tag -->
+<script>
+window.sTagConfig = window.sTagConfig || [];
+function sTag(){window.sTagConfig.push(arguments);}
+sTag('bid', 33481);
+sTag('bsk', '0dead03e4081e519b611d757690e0e99');
+</script>
+<script async src="https://static.slicktext.com/s-tag/init.js" type="module"></script>
+<!-- End SlickText Tag -->
 </head>
 <body>
 
@@ -100,7 +111,31 @@ fbq('track', 'PageView');
         </div>
     </section>
 
-    <!-- 3. Music Base: Royalty Records Portal -->
+    <!-- 3. Royal Club SMS Capture -->
+    <section id="royal-club" class="section" style="padding-top: 0;">
+        <div class="section-header">
+            <div class="section-tag">Priority Access</div>
+            <div class="section-title">Join The Royal Club</div>
+        </div>
+        <div class="split-layout">
+            <div class="split-col">
+                <p style="color: var(--muted); font-weight: 300; text-transform: none;">
+                    Drops sell out. Royal Club members get restock alerts, early access links and member-only pricing sent straight to their phone before anything goes public.
+                </p>
+            </div>
+            <div class="split-col">
+                <div class="royal-club-form">
+                    <!-- SlickText hosted form: this script replaces itself with the signup iframe, so it must stay here in the body -->
+                    <script async src="https://static.slicktext.com/forms/scripts/embed/eyJ1cmwiOiJodHRwczpcL1wvc3Rmb3Jtcy5jb1wvMzA0MjJjMGZiYjU3MzY5OTAwN2EyZDEyOTNkMDIyMjMifQ"></script>
+                    <noscript>
+                        <a class="btn" href="https://stforms.co/30422c0fbb573699007a2d1293d02223" target="_blank" rel="noopener">Join by text</a>
+                    </noscript>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Music Base: Royalty Records Portal -->
     <section id="music" style="background: #070707; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
         <div class="section split-layout">
             <div class="split-col">
@@ -122,7 +157,7 @@ fbq('track', 'PageView');
         </div>
     </section>
 
-    <!-- 4. Enterprise Architecture Layer -->
+    <!-- 5. Enterprise Architecture Layer -->
     <section id="business" class="section">
         <div class="section-header">
             <div class="section-tag">Corporate Architecture</div>
@@ -194,13 +229,4 @@ fbq('track', 'PageView');
         window.addEventListener('DOMContentLoaded', fetchStudioData);
     </script>
 </body>
-<!-- Begin SlickText Tag -->
-<script>
-window.sTagConfig = window.sTagConfig || [];
-function sTag(){window.sTagConfig.push(arguments);}
-sTag('bid', 33481);
-sTag('bsk', '0dead03e4081e519b611d757690e0e99');
-</script>
-<script async src="https://static.slicktext.com/s-tag/init.js" type="module"></script>
-<!-- End SlickText Tag -->
 </html>

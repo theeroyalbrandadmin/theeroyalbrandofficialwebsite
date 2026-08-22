@@ -23,8 +23,12 @@
         nav .links a { color: var(--accent); text-decoration: none; margin-left: 30px; font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s ease; }
         nav .links a:hover { color: var(--muted); }
         .hero { position: relative; height: 90vh; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--border); background: #000; }
-        .hero-video-placeholder { position: absolute; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.9) 100%), url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1974&auto=format&fit=crop') center/cover no-repeat; filter: grayscale(100%) brightness(0.3); z-index: 1; }
-        .hero-content { position: relative; text-align: center; z-index: 2; max-width: 800px; padding: 0 20px; }
+        .hero-video-placeholder { position: absolute; inset: 0; width: 100%; height: 100%; background: radial-gradient(120% 90% at 50% 12%, #24242b 0%, #101013 45%, #000 100%); z-index: 1; }
+        .hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 2; opacity: 0; transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1); filter: grayscale(35%) contrast(1.06) brightness(0.62); }
+        .hero-video.is-ready { opacity: 1; }
+        .hero-scrim { position: absolute; inset: 0; z-index: 3; pointer-events: none; background: linear-gradient(180deg, rgba(10,10,10,0.30) 0%, rgba(10,10,10,0.50) 45%, rgba(10,10,10,0.92) 100%); }
+        @media (prefers-reduced-motion: reduce) { .hero-video { display: none; } }
+        .hero-content { position: relative; text-align: center; z-index: 4; max-width: 800px; padding: 0 20px; }
         .hero-content h1 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 5rem; line-height: 0.9; letter-spacing: -3px; margin-bottom: 20px; text-transform: uppercase; }
         .hero-content p { font-size: 1.1rem; color: var(--muted); margin-bottom: 35px; font-weight: 300; }
         .section { padding: 120px 5%; max-width: 1400px; margin: 0 auto; }
@@ -81,12 +85,27 @@ fbq('track', 'PageView');
  <!-- 1. Eye-Snatching Content Hub -->
 <section class="hero">
     <div class="hero-video-placeholder" id="hero-bg"></div>
+    <video class="hero-video" id="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true" tabindex="-1">
+        <source src="/images/uploads/BingBop_Loop_Luxury_SlowMo.mp4" type="video/mp4">
+    </video>
+    <div class="hero-scrim"></div>
     <div class="hero-content" style="text-align: center; max-width: 800px; padding: 20px;">
         <h1 style="font-size: clamp(2.5rem, 6vw, 5rem); letter-spacing: -0.05em; text-transform: uppercase; margin-bottom: 20px; font-weight: 900;">JUST BE GREAT</h1>
         <p style="font-size: 1.1rem; color: var(--muted); max-width: 600px; margin: 0 auto 30px auto; line-height: 1.6;">Premium heavyweight street garments designed to elevate. Limited JBG tracksuits and Royaltees available now.</p>
         <a href="https://theeroyalbrandshop.bigcartel.com" target="_blank" class="btn" style="display: inline-block; background: #fff; color: #000; padding: 15px 40px; font-weight: bold; text-transform: uppercase; text-decoration: none; letter-spacing: 0.1em; font-size: 0.9rem;">SHOP THE DROP</a>
     </div>
 </section>
+<script>
+    (function () {
+        var v = document.getElementById('hero-video');
+        if (!v) return;
+        var reveal = function () { v.classList.add('is-ready'); };
+        if (v.readyState >= 2) reveal(); else v.addEventListener('loadeddata', reveal, { once: true });
+        // Autoplay can be refused (battery saver, strict policies) - fall back to the gradient.
+        var play = v.play();
+        if (play && play.catch) play.catch(function () { v.classList.remove('is-ready'); });
+    })();
+</script>
 
     <!-- 2. JBG Apparel Focal Point -->
     <section id="shop" class="section">

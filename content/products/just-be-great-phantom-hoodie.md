@@ -1,8 +1,10 @@
 ---
 title: Just Be Great "Phantom" Hoodie
-price: $250
+price: From $250
 image: /images/uploads/phantom-hoodie-carousel-.png
 details: Heavy Weight Cotton
+url: https://shop.theeroyalbrand.com/product/just-be-great-phantom-hoodie
+order: 1
 sizes:
   - Small
   - Medium

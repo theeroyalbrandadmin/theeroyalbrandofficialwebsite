@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Decap/Netlify CMS login surfaces. A git-gateway admin panel should never be
+# indexed. /admin/ manages the live product catalogue; /Thee_Royal_Brand_Site/
+# holds the back-office CRM build, which is not public yet.
+Disallow: /admin/
+Disallow: /Thee_Royal_Brand_Site/
+
+Sitemap: https://theeroyalbrand.com/sitemap.xml

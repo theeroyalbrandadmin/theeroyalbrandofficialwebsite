@@ -3,54 +3,398 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THEE ROYAL BRAND</title>
+    <title>Thee Royal Brand — Just Be Great</title>
+    <meta name="description" content="Premium heavyweight street garments out of Phoenix, Arizona. Limited JBG tracksuits, hoodies and Royaltees. Home of Royalty Records and Better Than TV.">
+    <meta name="theme-color" content="#0b0a08">
+    <link rel="icon" href="/.netlify/images?url=/images/uploads/transparent-brand-logo.png&amp;w=64&amp;fm=webp" type="image/webp">
+    <meta property="og:title" content="Thee Royal Brand — Just Be Great">
+    <meta property="og:description" content="Premium heavyweight street garments out of Phoenix, Arizona.">
+    <meta property="og:image" content="https://theeroyalbrand.com/.netlify/images?url=/images/uploads/jbg-phantom-set.png&amp;w=1200&amp;h=630&amp;fit=cover&amp;fm=jpg&amp;q=78">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://theeroyalbrand.com/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://theeroyalbrand.com/">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;0,6..96,700;1,6..96,400&family=Chivo:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <style>
         :root {
-            --bg: #0a0a0a;
-            --surface: #121212;
-            --border: #222222;
-            --accent: #ffffff;
-            --muted: #8a8a8a;
+            /* Warm off-black + desaturated gold. One palette, no cool tones. */
+            --ink:      #0b0a08;
+            --ink-2:    #100e0b;
+            --ink-3:    #17140f;
+            --line:     #2a2620;
+            --line-2:   #3c362c;
+            --bone:     #f2ede3;
+            --bone-2:   #c6bfb1;
+            --dim:      #8d8474;
+            --gold:     #c9a227;
+            --gold-2:   #e3c76d;
+
+            --ease:  cubic-bezier(.16, 1, .3, 1);
+            --pad:   clamp(20px, 5vw, 72px);
+            --maxw:  1360px;
+            --nav-h: 74px;
         }
+
         * { box-sizing: border-box; margin: 0; padding: 0; }
-<script async src="https://static.slicktext.com/forms/scripts/embed/eyJ1cmwiOiJodHRwczpcL1wvc3Rmb3Jtcy5jb1wvMzA0MjJjMGZiYjU3MzY5OTAwN2EyZDEyOTNkMDIyMjMifQ"></script> body { background: var(--bg); color: var(--accent); font-family: 'Inter', sans-serif; overflow-x: hidden; line-height: 1.6; }
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 30px 5%; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(10, 10, 10, 0.95); backdrop-filter: blur(10px); z-index: 100; }
-        nav .logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.4rem; letter-spacing: -1px; text-transform: uppercase; }
-        nav .links a { color: var(--accent); text-decoration: none; margin-left: 30px; font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s ease; }
-        nav .links a:hover { color: var(--muted); }
-        .hero { position: relative; height: 90vh; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--border); background: #000; }
-        .hero-video-placeholder { position: absolute; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.9) 100%), url('https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1974&auto=format&fit=crop') center/cover no-repeat; filter: grayscale(100%) brightness(0.3); z-index: 1; }
-        .hero-content { position: relative; text-align: center; z-index: 2; max-width: 800px; padding: 0 20px; }
-        .hero-content h1 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 5rem; line-height: 0.9; letter-spacing: -3px; margin-bottom: 20px; text-transform: uppercase; }
-        .hero-content p { font-size: 1.1rem; color: var(--muted); margin-bottom: 35px; font-weight: 300; }
-        .section { padding: 120px 5%; max-width: 1400px; margin: 0 auto; }
-        .section-header { margin-bottom: 60px; }
-        .section-tag { font-size: 0.8rem; color: var(--muted); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 10px; font-weight: 600; }
-        .section-title { font-family: 'Syne', sans-serif; font-size: 2.5rem; letter-spacing: -1px; text-transform: uppercase; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        .product-card { background: var(--surface); border: 1px solid var(--border); padding: 20px; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); position: relative; }
-        .product-card:hover { transform: translateY(-5px); border-color: var(--accent); }
-        .product-card .img-container { width: 100%; aspect-ratio: 1/1; background: #1a1a1a; margin-bottom: 25px; overflow: hidden; }
-        .product-card img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%); transition: transform 0.5s ease; }
-        .product-card h3 { font-family: 'Syne', sans-serif; font-size: 1.2rem; margin-bottom: 8px; letter-spacing: -0.5px; text-transform: uppercase; }
-        .product-card .details { font-size: 0.85rem; color: var(--muted); margin-bottom: 5px; }
-        .product-card .price { color: var(--accent); font-weight: 600; font-size: 1.1rem; margin-bottom: 10px; }
-        .product-card .badge { display: inline-block; padding: 4px 8px; font-size: 0.7rem; font-weight: bold; background: #222; color: #fff; text-transform: uppercase; margin-bottom: 15px; letter-spacing: 1px; }
-        .btn { display: inline-block; background: var(--accent); color: var(--bg); border: 1px solid var(--accent); padding: 18px 40px; font-size: 0.9rem; font-weight: 600; letter-spacing: 1px; cursor: pointer; text-transform: uppercase; text-decoration: none; transition: all 0.3s ease; text-align: center; }
-        .btn:hover { background: transparent; color: var(--accent); }
-        .btn-outline { background: transparent; color: var(--accent); border: 1px solid var(--border); }
-        .btn-outline:hover { border-color: var(--accent); }
-        .split-layout { display: flex; gap: 80px; align-items: center; flex-wrap: wrap; }
-        .split-col { flex: 1; min-width: 320px; }
-        form { display: flex; flex-direction: column; gap: 20px; }
-        input, textarea { background: var(--surface); border: 1px solid var(--border); padding: 20px; color: var(--accent); font-family: 'Inter', sans-serif; font-size: 0.95rem; transition: border-color 0.3s ease; }
-        input:focus, textarea:focus { border-color: var(--accent); outline: none; }
-        .matrix-box { background: linear-gradient(135deg, #111111 0%, #050505 100%); border-left: 2px solid var(--accent); padding: 40px; }
-        @media(max-width: 768px) { .hero-content h1 { font-size: 3rem; } nav { padding: 20px 5%; } .split-layout { gap: 40px; } }
+
+        html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); }
+
+        body {
+            background: var(--ink);
+            color: var(--bone);
+            font-family: 'Chivo', system-ui, sans-serif;
+            font-weight: 300;
+            line-height: 1.65;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection { background: var(--gold); color: var(--ink); }
+
+        /* ---------- Fixed grain + vignette. Never on a scrolling container. ---------- */
+        .grain, .vignette { position: fixed; inset: 0; pointer-events: none; z-index: 9998; }
+        .grain {
+            opacity: .05; mix-blend-mode: overlay;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+        .vignette { box-shadow: inset 0 0 min(240px, 18vw) rgba(0,0,0,.75); z-index: 9997; }
+
+        /* ---------- Typography primitives ---------- */
+        .display {
+            font-family: 'Bodoni Moda', Didot, Georgia, serif;
+            font-weight: 700;
+            line-height: .92;
+            letter-spacing: -.02em;
+            text-transform: uppercase;
+        }
+        .eyebrow {
+            font-family: 'Azeret Mono', ui-monospace, monospace;
+            font-size: .68rem;
+            font-weight: 500;
+            letter-spacing: .28em;
+            text-transform: uppercase;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .eyebrow::after {
+            content: ''; height: 1px; flex: 1;
+            background: linear-gradient(90deg, var(--line-2), transparent);
+        }
+        .meta {
+            font-family: 'Azeret Mono', ui-monospace, monospace;
+            font-size: .66rem; letter-spacing: .2em; text-transform: uppercase; color: var(--dim);
+        }
+        .lede { color: var(--bone-2); font-size: clamp(.98rem, 1.5vw, 1.1rem); max-width: 46ch; }
+
+        .skip {
+            position: absolute; left: -9999px; top: 0; z-index: 10000;
+            background: var(--gold); color: var(--ink); padding: 12px 20px;
+            font-family: 'Azeret Mono', monospace; font-size: .7rem; letter-spacing: .16em; text-transform: uppercase;
+        }
+        .skip:focus { left: 12px; top: 12px; }
+
+        /* ---------- Nav ---------- */
+        .nav {
+            position: sticky; top: 0; z-index: 500;
+            height: var(--nav-h);
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 var(--pad);
+            border-bottom: 1px solid transparent;
+            transition: background .5s var(--ease), border-color .5s var(--ease), backdrop-filter .5s var(--ease);
+        }
+        .nav.is-stuck {
+            background: rgba(11, 10, 8, .82);
+            backdrop-filter: blur(14px) saturate(140%);
+            border-bottom-color: var(--line);
+        }
+        .wordmark { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--bone); }
+        .wordmark img { width: 30px; height: 30px; object-fit: contain; }
+        .wordmark span {
+            font-family: 'Bodoni Moda', serif; font-weight: 600;
+            font-size: 1.02rem; letter-spacing: .16em; text-transform: uppercase; white-space: nowrap;
+        }
+        .nav-links { display: flex; align-items: center; gap: 34px; }
+        .nav-links a {
+            position: relative; color: var(--bone-2); text-decoration: none;
+            font-family: 'Azeret Mono', monospace; font-size: .68rem;
+            letter-spacing: .18em; text-transform: uppercase;
+            padding: 6px 0; transition: color .3s var(--ease);
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; left: 0; bottom: 0; height: 1px; width: 100%;
+            background: var(--gold); transform: scaleX(0); transform-origin: left;
+            transition: transform .45s var(--ease);
+        }
+        .nav-links a:hover { color: var(--bone); }
+        .nav-links a:hover::after { transform: scaleX(1); }
+        .nav-links a.is-cta {
+            color: var(--ink); background: var(--gold); padding: 10px 18px;
+            transition: background .3s var(--ease), transform .3s var(--ease);
+        }
+        .nav-links a.is-cta::after { display: none; }
+        .nav-links a.is-cta:hover { background: var(--gold-2); transform: translateY(-1px); }
+
+        .burger {
+            display: none; width: 42px; height: 42px; border: 1px solid var(--line-2);
+            background: transparent; cursor: pointer; position: relative;
+        }
+        .burger i { position: absolute; left: 11px; width: 18px; height: 1px; background: var(--bone); transition: transform .4s var(--ease), opacity .3s; }
+        .burger i:nth-child(1) { top: 15px; } .burger i:nth-child(2) { top: 20px; } .burger i:nth-child(3) { top: 25px; }
+        body.menu-open .burger i:nth-child(1) { transform: translateY(5px) rotate(45deg); }
+        body.menu-open .burger i:nth-child(2) { opacity: 0; }
+        body.menu-open .burger i:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
+
+        /* ---------- Hero: asymmetric editorial split, not a centred block ---------- */
+        .hero { position: relative; min-height: min(92vh, 900px); display: flex; align-items: flex-end; overflow: hidden; }
+        .hero-media { position: absolute; inset: 0; z-index: 0; }
+        .hero-media video, .hero-media img {
+            width: 100%; height: 100%; object-fit: cover;
+            filter: grayscale(88%) contrast(1.08) brightness(.42);
+        }
+        .hero-media::after {
+            content: ''; position: absolute; inset: 0;
+            background:
+                radial-gradient(60% 55% at 18% 42%, rgba(201,162,39,.16), transparent 70%),
+                linear-gradient(180deg, rgba(11,10,8,.55) 0%, rgba(11,10,8,.2) 38%, rgba(11,10,8,.97) 100%);
+        }
+        .hero-inner {
+            position: relative; z-index: 2; width: 100%;
+            max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad) clamp(48px, 7vw, 92px);
+            display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, .85fr);
+            gap: clamp(32px, 5vw, 72px); align-items: end;
+        }
+        .hero h1 {
+            font-size: clamp(3.1rem, 12.5vw, 10.5rem);
+            margin: 22px 0 26px;
+        }
+        .hero h1 em {
+            font-style: italic; font-weight: 400; display: block;
+            color: var(--gold); letter-spacing: -.01em;
+        }
+        .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+
+        /* Right-hand meta rail */
+        .rail { border-left: 1px solid var(--line-2); padding-left: clamp(18px, 2vw, 28px); }
+        .rail-row { padding: 14px 0; border-bottom: 1px solid var(--line); }
+        .rail-row:last-child { border-bottom: 0; }
+        .rail-row dt { font-family: 'Azeret Mono', monospace; font-size: .6rem; letter-spacing: .22em; text-transform: uppercase; color: var(--dim); }
+        .rail-row dd { font-family: 'Bodoni Moda', serif; font-size: 1.05rem; letter-spacing: .02em; margin-top: 5px; }
+        .countdown { display: flex; gap: 16px; margin-top: 8px; }
+        .countdown > div { min-width: 46px; }
+        .countdown b { font-family: 'Bodoni Moda', serif; font-size: clamp(1.5rem, 2.4vw, 2.1rem); font-weight: 700; display: block; line-height: 1; font-variant-numeric: tabular-nums; }
+        .countdown small { font-family: 'Azeret Mono', monospace; font-size: .55rem; letter-spacing: .2em; color: var(--dim); }
+
+        .scroll-cue {
+            position: absolute; left: var(--pad); bottom: 18px; z-index: 3;
+            font-family: 'Azeret Mono', monospace; font-size: .58rem; letter-spacing: .26em;
+            text-transform: uppercase; color: var(--dim); display: flex; align-items: center; gap: 10px;
+        }
+        .scroll-cue i { display: block; width: 1px; height: 34px; background: linear-gradient(var(--gold), transparent); animation: cue 2.4s var(--ease) infinite; transform-origin: top; }
+        @keyframes cue { 0%,100% { transform: scaleY(.35); opacity: .4 } 50% { transform: scaleY(1); opacity: 1 } }
+
+        /* ---------- Ticker ---------- */
+        .ticker { border-block: 1px solid var(--line); background: var(--ink-2); overflow: hidden; padding: 13px 0; }
+        .ticker-track { display: flex; width: max-content; animation: slide 42s linear infinite; }
+        .ticker-track span {
+            font-family: 'Azeret Mono', monospace; font-size: .66rem; letter-spacing: .24em;
+            text-transform: uppercase; color: var(--bone-2); padding: 0 26px; white-space: nowrap;
+        }
+        .ticker-track span b { color: var(--gold); font-weight: 500; }
+        @keyframes slide { to { transform: translateX(-50%); } }
+        .ticker:hover .ticker-track { animation-play-state: paused; }
+
+        /* ---------- Section shell ---------- */
+        .sec { max-width: var(--maxw); margin: 0 auto; padding: clamp(76px, 10vw, 158px) var(--pad); }
+        .sec-head {
+            display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, .8fr);
+            gap: clamp(24px, 4vw, 64px); align-items: end; margin-bottom: clamp(44px, 6vw, 76px);
+        }
+        .sec-head h2 { font-size: clamp(2.1rem, 5.6vw, 4.4rem); margin-top: 18px; }
+        .sec-head h2 em { font-style: italic; font-weight: 400; color: var(--gold); }
+        .sec-note { color: var(--dim); font-size: .9rem; border-left: 1px solid var(--line-2); padding-left: 20px; }
+
+        /* ---------- Buttons ---------- */
+        .btn {
+            position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+            font-family: 'Azeret Mono', monospace; font-size: .7rem; font-weight: 500;
+            letter-spacing: .2em; text-transform: uppercase; text-decoration: none;
+            padding: 17px 32px; border: 1px solid var(--gold); background: var(--gold); color: var(--ink);
+            cursor: pointer; overflow: hidden; transition: color .45s var(--ease), border-color .45s var(--ease);
+        }
+        .btn::before {
+            content: ''; position: absolute; inset: 0; background: var(--ink); z-index: 0;
+            transform: scaleY(0); transform-origin: bottom; transition: transform .5s var(--ease);
+        }
+        .btn > * { position: relative; z-index: 1; }
+        .btn:hover { color: var(--gold); }
+        .btn:hover::before { transform: scaleY(1); }
+        .btn-ghost { background: transparent; color: var(--bone); border-color: var(--line-2); }
+        .btn-ghost::before { background: var(--bone); }
+        .btn-ghost:hover { color: var(--ink); border-color: var(--bone); }
+        .btn[aria-disabled="true"] { opacity: .38; pointer-events: none; }
+        .btn i { font-style: normal; transition: transform .4s var(--ease); }
+        .btn:hover i { transform: translate(3px, -3px); }
+
+        /* ---------- Products ---------- */
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: clamp(16px, 2vw, 26px); align-items: start; }
+        .card { background: var(--ink-2); border: 1px solid var(--line); padding: clamp(18px, 2vw, 26px); display: flex; flex-direction: column; transition: background .5s var(--ease), border-color .5s var(--ease), transform .5s var(--ease); }
+        .card:hover { background: var(--ink-3); border-color: var(--line-2); transform: translateY(-3px); }
+        .card-img {
+            position: relative; aspect-ratio: 4 / 5; overflow: hidden;
+            background: linear-gradient(150deg, var(--ink-3), var(--ink-2));
+            margin-bottom: 22px;
+        }
+        .card-img img { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: cover; transition: transform 1.1s var(--ease), filter .6s var(--ease); filter: grayscale(24%); }
+        .card:hover .card-img img { transform: scale(1.055); filter: grayscale(0%); }
+        .card-fallback {
+            position: absolute; inset: 0; display: grid; place-items: center;
+            font-family: 'Bodoni Moda', serif; font-size: 2.4rem; letter-spacing: .1em; color: var(--line-2);
+        }
+        .badge {
+            position: absolute; top: 12px; left: 12px; z-index: 2;
+            font-family: 'Azeret Mono', monospace; font-size: .55rem; letter-spacing: .18em; text-transform: uppercase;
+            padding: 6px 10px; background: rgba(11,10,8,.86); border: 1px solid var(--line-2); color: var(--bone-2);
+            backdrop-filter: blur(6px);
+        }
+        .badge[data-stock="In Stock"]  { border-color: var(--gold); color: var(--gold); }
+        .badge[data-stock="Low Stock"] { border-color: #b8742e; color: #d99552; }
+        .badge[data-stock="Pre-Order"] { border-color: var(--line-2); color: var(--bone-2); }
+        .badge[data-stock="Sold Out"]  { border-color: var(--line-2); color: var(--dim); text-decoration: line-through; }
+        .card h3 { font-family: 'Bodoni Moda', serif; font-weight: 600; font-size: 1.22rem; letter-spacing: .01em; line-height: 1.2; text-transform: uppercase; }
+        .card-detail { color: var(--dim); font-size: .78rem; font-family: 'Azeret Mono', monospace; letter-spacing: .1em; text-transform: uppercase; margin-top: 8px; }
+        .card-desc { color: var(--bone-2); font-size: .86rem; margin-top: 12px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+        .sizes { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+        .sizes span { font-family: 'Azeret Mono', monospace; font-size: .58rem; letter-spacing: .1em; padding: 4px 8px; border: 1px solid var(--line); color: var(--dim); }
+        .card .btn { margin-top: 22px; width: 100%; }
+        .card-foot { margin-top: auto; }
+
+        /* Skeleton loaders shaped like the real card */
+        .skeleton .sk { background: linear-gradient(90deg, var(--ink-2) 25%, var(--ink-3) 50%, var(--ink-2) 75%); background-size: 240% 100%; animation: shimmer 1.5s linear infinite; }
+        .skeleton .sk-img { aspect-ratio: 4 / 5; margin-bottom: 22px; }
+        .skeleton .sk-line { height: 12px; margin-bottom: 10px; }
+        .skeleton .sk-line.w70 { width: 70% } .skeleton .sk-line.w40 { width: 40% } .skeleton .sk-line.w90 { width: 90% }
+        .skeleton .sk-btn { height: 52px; margin-top: 22px; }
+        @keyframes shimmer { to { background-position: -240% 0; } }
+
+        .state { border: 1px dashed var(--line-2); padding: clamp(32px, 5vw, 64px); text-align: center; grid-column: 1 / -1; background: var(--ink); }
+        .state h3 { font-family: 'Bodoni Moda', serif; font-size: 1.5rem; text-transform: uppercase; letter-spacing: .04em; }
+        .state p { color: var(--dim); font-size: .9rem; margin: 12px auto 0; max-width: 44ch; }
+        .state .btn { margin-top: 26px; }
+
+        /* ---------- Royal Club / SlickText ---------- */
+        .club { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: clamp(32px, 5vw, 80px); align-items: start; }
+        .st-embed { position: relative; border: 1px solid var(--line-2); background: var(--ink-2); padding: 10px; min-height: 340px; }
+        .st-embed::before, .st-embed::after {
+            content: ''; position: absolute; width: 12px; height: 12px; border: 1px solid var(--gold);
+        }
+        .st-embed::before { top: -1px; left: -1px; border-right: 0; border-bottom: 0; }
+        .st-embed::after  { bottom: -1px; right: -1px; border-left: 0; border-top: 0; }
+        .st-embed iframe { display: block; width: 100%; min-height: 320px; border: 0; }
+        .fineprint { font-size: .78rem; color: var(--dim); line-height: 1.7; margin-top: 24px; }
+        .fineprint strong { color: var(--bone); font-weight: 400; }
+        .perks { list-style: none; margin-top: 30px; border-top: 1px solid var(--line); }
+        .perks li { display: flex; gap: 16px; padding: 15px 0; border-bottom: 1px solid var(--line); font-size: .9rem; color: var(--bone-2); }
+        .perks li::before { content: attr(data-n); font-family: 'Azeret Mono', monospace; font-size: .6rem; color: var(--gold); letter-spacing: .1em; padding-top: 4px; }
+
+        /* ---------- Records / A&R form ---------- */
+        .band { background: var(--ink-2); border-block: 1px solid var(--line); position: relative; overflow: hidden; }
+        .band::before {
+            content: ''; position: absolute; inset: 0; z-index: 0;
+            background: radial-gradient(52% 60% at 88% 12%, rgba(201,162,39,.09), transparent 68%);
+        }
+        .band > * { position: relative; z-index: 1; }
+        .ar { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 80px); align-items: start; }
+        .records-mark { width: clamp(84px, 9vw, 118px); height: auto; opacity: .9; margin-bottom: 26px; }
+        form.ar-form { display: flex; flex-direction: column; gap: 26px; }
+        .field { position: relative; }
+        .field label {
+            display: block; font-family: 'Azeret Mono', monospace; font-size: .6rem;
+            letter-spacing: .22em; text-transform: uppercase; color: var(--dim); margin-bottom: 9px;
+        }
+        .field input, .field textarea {
+            width: 100%; background: transparent; border: 0; border-bottom: 1px solid var(--line-2);
+            padding: 12px 0; color: var(--bone); font-family: 'Chivo', sans-serif; font-size: .98rem; font-weight: 300;
+            transition: border-color .4s var(--ease);
+        }
+        .field textarea { resize: vertical; min-height: 92px; }
+        .field input::placeholder, .field textarea::placeholder { color: #5f584c; }
+        .field input:focus, .field textarea:focus { outline: none; border-bottom-color: var(--gold); }
+        .field input:user-invalid, .field textarea:user-invalid { border-bottom-color: #a8452f; }
+        .field .err { display: none; font-family: 'Azeret Mono', monospace; font-size: .58rem; letter-spacing: .14em; text-transform: uppercase; color: #d4795f; margin-top: 8px; }
+        .field input:user-invalid ~ .err, .field textarea:user-invalid ~ .err { display: block; }
+        .hp { position: absolute; left: -9999px; }
+
+        /* ---------- Enterprise index ---------- */
+        .index-list { border-top: 1px solid var(--line); }
+        .index-row {
+            display: grid; grid-template-columns: 62px minmax(0, .9fr) minmax(0, 1.4fr) auto;
+            gap: clamp(14px, 2.5vw, 40px); align-items: baseline;
+            padding: clamp(22px, 3vw, 34px) 0; border-bottom: 1px solid var(--line);
+            transition: background .5s var(--ease), padding-inline .5s var(--ease);
+        }
+        .index-row:hover { background: var(--ink-2); padding-inline: 18px; }
+        .index-row .num { font-family: 'Azeret Mono', monospace; font-size: .66rem; letter-spacing: .18em; color: var(--gold); }
+        .index-row h3 { font-family: 'Bodoni Moda', serif; font-weight: 600; font-size: clamp(1.15rem, 2vw, 1.6rem); text-transform: uppercase; letter-spacing: .01em; line-height: 1.15; }
+        .index-row p { color: var(--dim); font-size: .88rem; }
+        .index-row .go { font-family: 'Azeret Mono', monospace; font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; color: var(--bone-2); text-decoration: none; white-space: nowrap; border-bottom: 1px solid var(--line-2); padding-bottom: 3px; transition: color .3s, border-color .3s; }
+        .index-row .go:hover { color: var(--gold); border-color: var(--gold); }
+        .index-row .go[data-static] { border: 0; color: var(--dim); }
+
+        /* ---------- Footer ---------- */
+        .foot { border-top: 1px solid var(--line); background: var(--ink-2); }
+        .foot-in { max-width: var(--maxw); margin: 0 auto; padding: clamp(56px, 7vw, 92px) var(--pad) 34px; }
+        .foot-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(0, .8fr)); gap: clamp(28px, 4vw, 56px); }
+        .foot h4 { font-family: 'Azeret Mono', monospace; font-size: .6rem; letter-spacing: .22em; text-transform: uppercase; color: var(--dim); margin-bottom: 18px; font-weight: 500; }
+        .foot ul { list-style: none; display: grid; gap: 11px; }
+        .foot a { color: var(--bone-2); text-decoration: none; font-size: .88rem; transition: color .3s; }
+        .foot a:hover { color: var(--gold); }
+        .foot-mark { font-family: 'Bodoni Moda', serif; font-size: clamp(1.9rem, 4.5vw, 3.2rem); font-weight: 700; text-transform: uppercase; line-height: .95; letter-spacing: -.01em; }
+        .foot-mark em { font-style: italic; font-weight: 400; color: var(--gold); }
+        .foot-bar { max-width: var(--maxw); margin: 0 auto; padding: 22px var(--pad) 40px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 14px 28px; justify-content: space-between; }
+
+        /* ---------- Scroll reveal ---------- */
+        .reveal { opacity: 0; transform: translateY(26px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
+        .reveal.in { opacity: 1; transform: none; }
+
+        /* Hero load-in stagger */
+        .rise { opacity: 0; transform: translateY(20px); animation: rise .95s var(--ease) forwards; }
+        @keyframes rise { to { opacity: 1; transform: none; } }
+        .d1 { animation-delay: .1s } .d2 { animation-delay: .24s } .d3 { animation-delay: .38s }
+        .d4 { animation-delay: .52s } .d5 { animation-delay: .66s }
+
+        /* ---------- Responsive ---------- */
+        @media (max-width: 1000px) {
+            .hero-inner, .sec-head, .club, .ar, .foot-grid { grid-template-columns: 1fr; }
+            .rail { border-left: 0; border-top: 1px solid var(--line-2); padding-left: 0; padding-top: 22px; }
+            .sec-note { border-left: 0; padding-left: 0; border-top: 1px solid var(--line-2); padding-top: 18px; }
+            .index-row { grid-template-columns: 44px 1fr; row-gap: 8px; }
+            .index-row p { grid-column: 2 } .index-row .go { grid-column: 2; justify-self: start; margin-top: 6px; }
+            .foot-grid { gap: 40px; }
+        }
+        @media (max-width: 780px) {
+            .nav-links {
+                position: fixed; inset: var(--nav-h) 0 0; flex-direction: column; justify-content: center;
+                gap: 28px; background: rgba(11,10,8,.97); backdrop-filter: blur(20px);
+                transform: translateY(-102%); transition: transform .6s var(--ease); z-index: 490;
+            }
+            body.menu-open .nav-links { transform: none; }
+            .nav-links a { font-size: .82rem; letter-spacing: .24em; }
+            .burger { display: block; z-index: 500; }
+            .hero { min-height: 88vh; }
+            .scroll-cue { display: none; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+            .reveal, .rise { opacity: 1; transform: none; }
+        }
     </style>
 <!-- Meta Pixel Code -->
 <script>
@@ -69,131 +413,522 @@ fbq('track', 'PageView');
 </head>
 <body>
 
-    <nav>
-        <div class="logo">THEE ROYAL BRAND</div>
-        <div class="links">
-           <a href="https://theeroyalbrandshop.bigcartel.com" target="_blank">Apparel</a>
-            <a href="#music">Royalty Records</a>
-            <a href="#business">Enterprise</a>
-        </div>
+<div class="grain" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+    <a class="wordmark" href="/" aria-label="Thee Royal Brand, home">
+        <img src="/.netlify/images?url=/images/uploads/transparent-brand-logo.png&w=60&fm=webp" alt="" width="30" height="30">
+        <span>Thee Royal Brand</span>
+    </a>
+    <nav class="nav-links" id="nav-links">
+        <a href="#shop">Apparel</a>
+        <a href="#music">Royalty Records</a>
+        <a href="#business">Enterprise</a>
+        <a href="/subscription">Membership</a>
+        <a class="is-cta" href="#royal-club">VIP Texts</a>
     </nav>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+        <i></i><i></i><i></i>
+    </button>
+</header>
 
- <!-- 1. Eye-Snatching Content Hub -->
-<section class="hero">
-    <div class="hero-video-placeholder" id="hero-bg"></div>
-    <div class="hero-content" style="text-align: center; max-width: 800px; padding: 20px;">
-        <h1 style="font-size: clamp(2.5rem, 6vw, 5rem); letter-spacing: -0.05em; text-transform: uppercase; margin-bottom: 20px; font-weight: 900;">JUST BE GREAT</h1>
-        <p style="font-size: 1.1rem; color: var(--muted); max-width: 600px; margin: 0 auto 30px auto; line-height: 1.6;">Premium heavyweight street garments designed to elevate. Limited JBG tracksuits and Royaltees available now.</p>
-        <a href="https://theeroyalbrandshop.bigcartel.com" target="_blank" class="btn" style="display: inline-block; background: #fff; color: #000; padding: 15px 40px; font-weight: bold; text-transform: uppercase; text-decoration: none; letter-spacing: 0.1em; font-size: 0.9rem;">SHOP THE DROP</a>
-    </div>
-</section>
+<main id="main">
 
-    <!-- 2. JBG Apparel Focal Point -->
-    <section id="shop" class="section">
-        <div class="section-header">
-            <div class="section-tag">Royalty Collections</div>
-            <div class="section-title">Just Be Great</div>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+        <div class="hero-media" aria-hidden="true">
+            <video id="hero-video" autoplay muted loop playsinline preload="metadata"
+                   poster="/.netlify/images?url=/images/uploads/jbg-phantom-set.png&w=1600&q=62&fm=webp">
+                <source src="/images/uploads/BingBop_Loop_Luxury_SlowMo.mp4" type="video/mp4">
+            </video>
         </div>
-        <!-- This grid will automatically build item cards straight from your dashboard files -->
-        <div class="grid" id="product-container">
-            <p style="color: var(--muted); font-family: Arial; font-size: 0.9rem;">LOADING IMPERIAL INVENTORY...</p>
+
+        <div class="hero-inner">
+            <div>
+                <p class="eyebrow rise d1"><span>Phoenix, Arizona &middot; Est. MMXXIV</span></p>
+                <h1 class="display rise d2">Just Be<em>Great</em></h1>
+                <p class="lede rise d3">Premium heavyweight street garments designed to elevate. Limited JBG
+                    tracksuits, phantom hoodies and Royaltees &mdash; cut, weighted and finished in small runs.</p>
+                <div class="hero-cta rise d4">
+                    <a class="btn" href="#shop"><span>See the drop</span><i>&#8599;</i></a>
+                    <a class="btn btn-ghost" href="/shop/" target="_blank" rel="noopener"><span>Visit the store</span><i>&#8599;</i></a>
+                </div>
+            </div>
+
+            <dl class="rail rise d5">
+                <div class="rail-row">
+                    <dt>Next release</dt>
+                    <dd>Out Of Sight Out Of Mind</dd>
+                    <div class="countdown" id="countdown" role="timer" aria-live="off">
+                        <div><b data-cd="d">--</b><small>Days</small></div>
+                        <div><b data-cd="h">--</b><small>Hrs</small></div>
+                        <div><b data-cd="m">--</b><small>Min</small></div>
+                        <div><b data-cd="s">--</b><small>Sec</small></div>
+                    </div>
+                </div>
+                <div class="rail-row">
+                    <dt>Direct line</dt>
+                    <dd>Text ROYAL to 833&#8209;508&#8209;0351</dd>
+                </div>
+                <div class="rail-row">
+                    <dt>Fulfilment</dt>
+                    <dd>Worldwide shipping</dd>
+                </div>
+            </dl>
+        </div>
+
+        <div class="scroll-cue" aria-hidden="true"><i></i><span>Scroll</span></div>
+    </section>
+
+    <div class="ticker" aria-hidden="true">
+        <div class="ticker-track" id="ticker">
+            <span>Apple Pay</span><span><b>&#9670;</b></span>
+            <span>Cash App Pay</span><span><b>&#9670;</b></span>
+            <span>Card</span><span><b>&#9670;</b></span>
+            <span>Heavyweight cotton</span><span><b>&#9670;</b></span>
+            <span>Small-run production</span><span><b>&#9670;</b></span>
+            <span>Royalty Records</span><span><b>&#9670;</b></span>
+            <span>Better Than TV</span><span><b>&#9670;</b></span>
+            <span>Phoenix, AZ</span><span><b>&#9670;</b></span>
+        </div>
+    </div>
+
+    <!-- ============ SHOP ============ -->
+    <section class="sec" id="shop">
+        <div class="sec-head reveal">
+            <div>
+                <p class="eyebrow"><span>Royalty Collections</span></p>
+                <h2 class="display">The Current <em>Drop</em></h2>
+            </div>
+            <p class="sec-note">Three sets are live right now. Every card opens that piece&rsquo;s own page on
+                shop.theeroyalbrand.com, where sizing, pricing and secure checkout are handled.</p>
+        </div>
+
+        <!-- Cards are rendered from content/products by the script at the end of this file.
+             The skeletons below hold the layout until that resolves. -->
+        <div class="grid" id="product-container" aria-busy="true">
+            <div class="card skeleton" aria-hidden="true"><div class="sk sk-img"></div><div class="sk sk-line w40"></div><div class="sk sk-line w90"></div><div class="sk sk-line w70"></div><div class="sk sk-btn"></div></div>
+            <div class="card skeleton" aria-hidden="true"><div class="sk sk-img"></div><div class="sk sk-line w40"></div><div class="sk sk-line w90"></div><div class="sk sk-line w70"></div><div class="sk sk-btn"></div></div>
+            <div class="card skeleton" aria-hidden="true"><div class="sk sk-img"></div><div class="sk sk-line w40"></div><div class="sk sk-line w90"></div><div class="sk sk-line w70"></div><div class="sk sk-btn"></div></div>
         </div>
     </section>
 
-    <!-- 3. Music Base: Royalty Records Portal -->
-    <section id="music" style="background: #070707; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
-        <div class="section split-layout">
-            <div class="split-col">
-                <div class="section-tag">A&R Portal</div>
-                <div class="section-title" style="margin-bottom: 25px;">Royalty Records</div>
-                <p style="color: var(--muted); font-weight: 300; margin-bottom: 20px; text-transform: none;">
-                    We are actively hunting for pure talent, authentic perspectives, and driven artists to expand our roster. Submit your tracks or music video links directly to our production division.
-                </p>
+    <!-- ============ ROYAL CLUB / SLICKTEXT ============ -->
+    <section class="band">
+        <div class="sec" id="royal-club">
+            <div class="sec-head reveal">
+                <div>
+                    <p class="eyebrow"><span>The Royal Club</span></p>
+                    <h2 class="display">VIP <em>Texts</em></h2>
+                </div>
+                <p class="sec-note">No algorithm sits between us. Drops go out by text first, then everywhere else.</p>
             </div>
-            <div class="split-col">
-                <form name="ar-submissions" method="POST" data-netlify="true">
-                    <input type="text" name="name" placeholder="Artist Name / Alias" required>
-                    <input type="email" name="email" placeholder="Contact Email" required>
-                    <input type="url" name="link" placeholder="Music Link (YouTube, SoundCloud, Audiomack)" required>
-                    <textarea name="message" rows="4" placeholder="Define your vision..."></textarea>
-                    <button type="submit" class="btn">Submit to Roster</button>
+
+            <div class="club">
+                <div class="reveal">
+                    <p class="lede">SMS is the only channel we own outright. Join the list for first access to new
+                        drops, product launches and store openings &mdash; before anything goes public.</p>
+                    <ul class="perks">
+                        <li data-n="01">First access to every garment release, ahead of the public store</li>
+                        <li data-n="02">Early alerts on Out Of Sight Out Of Mind and Royalty Records releases</li>
+                        <li data-n="03">Member-only codes that stack on nothing else</li>
+                    </ul>
+                    <p class="fineprint">
+                        Prefer to text instead? <strong>Text ROYAL to 833-508-0351.</strong><br>
+                        By joining you agree to receive recurring automated marketing texts from Thee Royal Brand.
+                        Reply STOP to cancel. Msg &amp; data rates may apply.
+                    </p>
+                </div>
+
+                <div class="reveal">
+                    <!-- SlickText inline sign-up form. The script replaces itself with the form iframe,
+                         so it must stay exactly where the form should appear. -->
+                    <div class="st-embed">
+                        <script async src="https://static.slicktext.com/forms/scripts/embed/eyJ1cmwiOiJodHRwczpcL1wvc3Rmb3Jtcy5jb1wvMzA0MjJjMGZiYjU3MzY5OTAwN2EyZDEyOTNkMDIyMjMifQ"></script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ ROYALTY RECORDS ============ -->
+    <section class="sec" id="music">
+        <div class="ar">
+            <div class="reveal">
+                <img class="records-mark" src="/.netlify/images?url=/images/uploads/thee-royalty-records-official-logo-1-.png&w=260&fm=webp" alt="Royalty Records" width="118" height="118">
+                <p class="eyebrow"><span>A&amp;R Portal</span></p>
+                <h2 class="display" style="font-size: clamp(2.1rem, 5vw, 3.8rem); margin: 18px 0 22px;">Royalty <em>Records</em></h2>
+                <p class="lede">We are actively hunting for pure talent, authentic perspectives and driven artists to
+                    expand the roster. Submit your tracks or music video links directly to our production division.</p>
+                <p class="fineprint">Every submission is heard. If it fits the house, you hear back inside two weeks.</p>
+            </div>
+
+            <div class="reveal">
+                <form class="ar-form" name="ar-submissions" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+                    <p class="hp"><label>Do not fill this in <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+                    <div class="field">
+                        <label for="f-name">Artist name / alias</label>
+                        <input id="f-name" type="text" name="name" placeholder="Who are we listening to?" required>
+                        <span class="err">Tell us what to call you</span>
+                    </div>
+                    <div class="field">
+                        <label for="f-email">Contact email</label>
+                        <input id="f-email" type="email" name="email" placeholder="you@domain.com" required>
+                        <span class="err">Needs to be a working email address</span>
+                    </div>
+                    <div class="field">
+                        <label for="f-link">Music link</label>
+                        <input id="f-link" type="url" name="link" placeholder="https:// YouTube, SoundCloud, Audiomack" required>
+                        <span class="err">Include the full link, starting with https://</span>
+                    </div>
+                    <div class="field">
+                        <label for="f-msg">Define your vision</label>
+                        <textarea id="f-msg" name="message" rows="4" placeholder="Where is this going, and who is it for?"></textarea>
+                    </div>
+                    <button class="btn" type="submit"><span>Submit to roster</span><i>&#8599;</i></button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- 4. Enterprise Architecture Layer -->
-    <section id="business" class="section">
-        <div class="section-header">
-            <div class="section-tag">Corporate Architecture</div>
-            <div class="section-title">The Enterprise Ecosystem</div>
-        </div>
-        <div class="grid">
-            <div class="matrix-box">
-                <h3 style="font-family: 'Syne', sans-serif; font-size: 1.4rem; margin-bottom: 15px;">THE MATRIX</h3>
-                <p style="color: var(--muted); font-size: 0.95rem; font-weight: 300; text-transform: none;">
-                    A unified engine combining music production via Royalty Records, digital content network distribution through Better Than TV, and high-ticket luxury physical goods via Thee Royal Brand clothing.
-                </p>
+    <!-- ============ ENTERPRISE ============ -->
+    <section class="band">
+        <div class="sec" id="business">
+            <div class="sec-head reveal">
+                <div>
+                    <p class="eyebrow"><span>Corporate Architecture</span></p>
+                    <h2 class="display">Royalty Is A <em>System</em></h2>
+                </div>
+                <p class="sec-note">Not a clothing label &mdash; a cultural house where music, garments and media run
+                    as one economy. Five divisions, one operating principle.</p>
             </div>
-            <div class="matrix-box" style="border-color: var(--border);">
-                <h3 style="font-family: 'Syne', sans-serif; font-size: 1.4rem; margin-bottom: 15px;">STRATEGIC INQUIRIES</h3>
-                <p style="color: var(--muted); font-size: 0.95rem; font-weight: 300; text-transform: none; margin-bottom: 30px;">
-                    For capital allocations, brand development partnerships, scaling infrastructure placement, or physical operations management.
-                </p>
-                <a href="mailto:contact@theeroyalbrand.com" class="btn btn-outline" style="width: 100%; text-align: center;">Contact Management</a>
+
+            <div class="index-list reveal">
+                <div class="index-row">
+                    <span class="num">I</span>
+                    <h3>Thee Royal Brand</h3>
+                    <p>The parent house. Owns the IP, the narrative and the community. Every touchpoint returns here.</p>
+                    <span class="go" data-static>Parent</span>
+                </div>
+                <div class="index-row">
+                    <span class="num">II</span>
+                    <h3>Royalty Records</h3>
+                    <p>Soundtrack of the movement. Trap God, Bing Bop and the unreleased archive. Audio drives garment desire.</p>
+                    <a class="go" href="#music">Submit a track</a>
+                </div>
+                <div class="index-row">
+                    <span class="num">III</span>
+                    <h3>TRB Clothing</h3>
+                    <p>Heavyweight street garments, phantom construction, royal cut. Inventory and checkout live on Big Cartel.</p>
+                    <a class="go" href="/shop/" target="_blank" rel="noopener">Visit the store</a>
+                </div>
+                <div class="index-row">
+                    <span class="num">IV</span>
+                    <h3>Better Than TV</h3>
+                    <p>Content network. Short docs, campaign loops and slow-motion studies, repurposed across every channel.</p>
+                    <a class="go" href="/OOSOOM" target="_blank" rel="noopener">Out Of Sight Out Of Mind</a>
+                </div>
+                <div class="index-row">
+                    <span class="num">V</span>
+                    <h3>The Royal Club</h3>
+                    <p>The direct line. SMS and membership &mdash; the only audience that cannot be throttled by a platform.</p>
+                    <a class="go" href="/subscription">Join the club</a>
+                </div>
+            </div>
+
+            <div class="sec-head" style="margin: clamp(48px,6vw,80px) 0 0;">
+                <div>
+                    <p class="eyebrow"><span>Strategic Inquiries</span></p>
+                    <p class="lede" style="margin-top: 18px;">For capital allocation, brand partnerships, scaling
+                        infrastructure or physical operations &mdash; reach management directly.</p>
+                </div>
+                <div>
+                    <a class="btn btn-ghost" href="mailto:theeroyalbrand@theeroyalbrand.com"><span>Contact management</span><i>&#8599;</i></a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- AUTOMATIC DASHBOARD ENGINE HANDSHAKE -->
-    <script>
-        async function fetchStudioData() {
-            try {
-                // Fetch product listings directly out of your GitHub storage folder 
-                const response = await fetch('https://api.github.com/repos/theeroyalbrandadmin/theeroyalbrandofficialwebsite/contents/content%2Fproducts');
-                if(!response.ok) throw new Error("No data files initialized yet.");
-                
-                const files = await response.json();
-                const container = document.getElementById('product-container');
-                container.innerHTML = ''; // Clear loading screen
-                
-                for (let file of files) {
-                    if (file.name.endsWith('.md') || file.name.endsWith('.json')) {
-                        const rawData = await fetch(file.download_url);
-                        const text = await rawData.text();
-                        
-                        // Parse dashboard inputs (Simulated parsing for YAML/Frontmatter attributes)
-                        const title = text.match(/title:\s*"(.*)"/) ? text.match(/title:\s*"(.*)"/)[1] : text.match(/title:\s*(.*)/)[1];
-                        const price = text.match(/price:\s*"(.*)"/) ? text.match(/price:\s*"(.*)"/)[1] : text.match(/price:\s*(.*)/)[1];
-                        const img = text.match(/image:\s*"(.*)"/) ? text.match(/image:\s*"(.*)"/)[1] : text.match(/image:\s*(.*)/)[1];
-                        const details = text.match(/details:\s*"(.*)"/) ? text.match(/details:\s*"(.*)"/)[1] : "Premium Collection";
-                        const stock = text.match(/stock:\s*"(.*)"/) ? text.match(/stock:\s*"(.*)"/)[1] : "Available";
+</main>
 
-                        container.innerHTML += `
-                            <div class="product-card">
-                                <div class="img-container">
-                                    <img src="${img}" alt="${title}">
-                                </div>
-                                <div class="badge">${stock}</div>
-                                <h3>${title}</h3>
-                                <div class="details">${details}</div>
-                                <div class="price">${price}</div>
-                                <button class="btn" style="width: 100%; padding: 14px 0;" onclick="window.open('https://theeroyalbrandshop.bigcartel.com/product/just-be-great-phantom-tracksuit', '_blank')">Buy Now! </button>
-                            </div>
-                        `;
-                    }
-                }
-            } catch (err) {
-                console.log("Awaiting first structural publish sequence...", err);
-                document.getElementById('product-container').innerHTML = `
-                    <p style="color: var(--muted); font-family: Arial; font-size: 0.9rem;">
-                        No published studio inventory found. Go to /admin and save your first piece to push it live!
-                    </p>`;
+<footer class="foot">
+    <div class="foot-in">
+        <div class="foot-grid">
+            <div>
+                <p class="foot-mark">Just Be<br><em>Great</em></p>
+                <p class="fineprint" style="max-width: 34ch;">Premium heavyweight street garments. Phoenix, Arizona
+                    &mdash; shipping worldwide.</p>
+            </div>
+            <div>
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="#shop">Current drop</a></li>
+                    <li><a href="/shop/" target="_blank" rel="noopener">Big Cartel store</a></li>
+                    <li><a href="/subscription">Membership</a></li>
+                    <li><a href="#royal-club">VIP texts</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>House</h4>
+                <ul>
+                    <li><a href="#music">Royalty Records</a></li>
+                    <li><a href="/OOSOOM" target="_blank" rel="noopener">Out Of Sight Out Of Mind</a></li>
+                    <li><a href="#business">Enterprise</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:theeroyalbrand@theeroyalbrand.com">theeroyalbrand@theeroyalbrand.com</a></li>
+                    <li><a href="https://instagram.com/_dahope" target="_blank" rel="noopener">Instagram &mdash; @_dahope</a></li>
+                    <li><a href="sms:8335080351">833-508-0351</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="foot-bar">
+        <span class="meta">&copy; <span id="year">2026</span> Thee Royal Brand &mdash; All rights reserved</span>
+        <span class="meta">Checkout secured by Big Cartel &middot; Apple Pay &middot; Cash App &middot; Card</span>
+    </div>
+</footer>
+
+<script>
+(function () {
+    'use strict';
+
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* ---------- Year ---------- */
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    /* ---------- Sticky nav state ---------- */
+    var nav = document.getElementById('nav');
+    var onScroll = function () { nav.classList.toggle('is-stuck', window.scrollY > 24); };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    /* ---------- Mobile menu ---------- */
+    var burger = document.getElementById('burger');
+    var navLinks = document.getElementById('nav-links');
+    var setMenu = function (open) {
+        document.body.classList.toggle('menu-open', open);
+        burger.setAttribute('aria-expanded', String(open));
+    };
+    burger.addEventListener('click', function () {
+        setMenu(!document.body.classList.contains('menu-open'));
+    });
+    navLinks.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') setMenu(false);
+    });
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') setMenu(false);
+    });
+
+    /* ---------- Hero video: skip it entirely when motion is reduced ---------- */
+    var video = document.getElementById('hero-video');
+    if (video && reduced) {
+        video.removeAttribute('autoplay');
+        video.pause();
+    }
+
+    /* ---------- Ticker: duplicate the track so the -50% loop is seamless ---------- */
+    var ticker = document.getElementById('ticker');
+    if (ticker) ticker.innerHTML += ticker.innerHTML;
+
+    /* ---------- Countdown to the next release ----------
+       Edit this one date to move the countdown. Past the date it flips to "Live now". */
+    var DROP = new Date('2026-08-31T00:00:00-07:00');
+    var cd = document.getElementById('countdown');
+    if (cd) {
+        var cells = {
+            d: cd.querySelector('[data-cd="d"]'), h: cd.querySelector('[data-cd="h"]'),
+            m: cd.querySelector('[data-cd="m"]'), s: cd.querySelector('[data-cd="s"]')
+        };
+        var pad = function (n) { return String(n).padStart(2, '0'); };
+        var tick = function () {
+            var left = DROP - new Date();
+            if (left <= 0) {
+                cd.innerHTML = '<div style="min-width:auto"><b>Live now</b>' +
+                    '<small>Available today</small></div>';
+                clearInterval(timer);
+                return;
             }
+            var s = Math.floor(left / 1000);
+            cells.d.textContent = pad(Math.floor(s / 86400));
+            cells.h.textContent = pad(Math.floor(s % 86400 / 3600));
+            cells.m.textContent = pad(Math.floor(s % 3600 / 60));
+            cells.s.textContent = pad(s % 60);
+        };
+        tick();
+        var timer = setInterval(tick, 1000);
+    }
+
+    /* ---------- Scroll reveal ---------- */
+    var targets = document.querySelectorAll('.reveal');
+    if (reduced || !('IntersectionObserver' in window)) {
+        targets.forEach(function (el) { el.classList.add('in'); });
+    } else {
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('in');
+                io.unobserve(entry.target);
+            });
+        }, { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+        targets.forEach(function (el) { io.observe(el); });
+    }
+
+    /* =========================================================================
+       Studio inventory: build product cards from content/products
+       ========================================================================= */
+    /* The drop roster. Each slug is a file in content/products, published from the
+       studio dashboard. Add or remove a slug here to change which pieces show up;
+       the sequence comes from each piece's Display Order field. */
+    var ROSTER = [
+        'just-be-great-phantom-set',
+        'oosoom-bloodshot-zip-set',
+        'just-be-great-money-tracksuit'
+    ];
+    var PRODUCTS_PATH = '/content/products/';
+    var STORE_URL = '/shop/';   // branded redirect -> shop.theeroyalbrand.com (see _redirects)
+    var container = document.getElementById('product-container');
+
+    var esc = function (s) {
+        return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+        });
+    };
+
+    /* Netlify Image CDN keeps the multi-megabyte studio uploads off the wire. */
+    var img = function (src, w) {
+        if (!src) return '';
+        if (/^https?:/i.test(src)) return src;
+        return '/.netlify/images?url=' + encodeURIComponent(src) + '&w=' + w + '&q=72&fm=webp';
+    };
+
+    /* Minimal front-matter reader. Handles unquoted values containing quotes
+       (e.g. Just Be Great "Phantom" Set) and `- item` list blocks. */
+    var parseFrontMatter = function (text) {
+        var match = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/.exec(text);
+        if (!match) return { data: {}, body: text };
+
+        var data = {}, body = match[2] || '', key = null;
+
+        match[1].split(/\r?\n/).forEach(function (raw) {
+            var listItem = /^\s*-\s+(.*)$/.exec(raw);
+            if (listItem && key) {
+                if (!Array.isArray(data[key])) data[key] = [];
+                data[key].push(unquote(listItem[1]));
+                return;
+            }
+            var pair = /^([A-Za-z0-9_-]+)\s*:\s*(.*)$/.exec(raw);
+            if (!pair) return;
+            key = pair[1];
+            var value = pair[2].trim();
+            data[key] = value === '' ? [] : unquote(value);
+        });
+
+        return { data: data, body: body };
+    };
+
+    function unquote(v) {
+        v = v.trim();
+        var quoted = (v.charAt(0) === '"' && v.slice(-1) === '"') ||
+                     (v.charAt(0) === "'" && v.slice(-1) === "'");
+        return quoted && v.length > 1 ? v.slice(1, -1) : v;
+    }
+
+    var firstParagraph = function (body) {
+        var lines = String(body).split(/\r?\n/);
+        for (var i = 0; i < lines.length; i++) {
+            var line = lines[i].trim();
+            if (line && line.charAt(0) !== '#' && line.charAt(0) !== '*' && line.charAt(0) !== '-') return line;
         }
-        window.addEventListener('DOMContentLoaded', fetchStudioData);
-    </script>
-</body>
+        return '';
+    };
+
+    // Display order comes from the `order` field in the CMS. Anything without one
+    // sorts to the end so an unranked piece never silently jumps to the front.
+    var rank = function (v) {
+        var n = parseInt(v, 10);
+        return isNaN(n) ? 9999 : n;
+    };
+
+    var cardHTML = function (p) {
+        var soldOut = String(p.stock).toLowerCase() === 'sold out';
+        var href = p.url || STORE_URL;
+        var sizes = Array.isArray(p.sizes) ? p.sizes : [];
+
+        return '<article class="card">' +
+            '<div class="card-img">' +
+                (p.stock ? '<span class="badge" data-stock="' + esc(p.stock) + '">' + esc(p.stock) + '</span>' : '') +
+                (p.image
+                    ? '<img src="' + esc(img(p.image, 720)) + '" alt="' + esc(p.title) + '" loading="lazy" decoding="async" ' +
+                      'onerror="this.remove()">'
+                    : '') +
+                '<span class="card-fallback" aria-hidden="true">TRB</span>' +
+            '</div>' +
+            '<h3>' + esc(p.title || 'Untitled piece') + '</h3>' +
+            (p.details ? '<p class="card-detail">' + esc(p.details) + '</p>' : '') +
+            (p.blurb ? '<p class="card-desc">' + esc(p.blurb) + '</p>' : '') +
+            (sizes.length
+                ? '<div class="sizes">' + sizes.map(function (s) { return '<span>' + esc(s) + '</span>'; }).join('') + '</div>'
+                : '') +
+            '<div class="card-foot">' +
+                '<a class="btn" href="' + esc(href) + '" target="_blank" rel="noopener"' +
+                (soldOut ? ' aria-disabled="true" tabindex="-1"' : '') + '>' +
+                    '<span>' + (soldOut ? 'Sold out' : 'Shop this set') + '</span>' +
+                    (soldOut ? '' : '<i>&#8599;</i>') +
+                '</a>' +
+            '</div>' +
+        '</article>';
+    };
+
+    var showState = function (title, copy, cta) {
+        container.setAttribute('aria-busy', 'false');
+        container.innerHTML =
+            '<div class="state"><h3>' + esc(title) + '</h3><p>' + copy + '</p>' +
+            (cta || '') + '</div>';
+    };
+
+    var loadProducts = function () {
+        Promise.all(ROSTER.map(function (slug) {
+            return fetch(PRODUCTS_PATH + slug + '.md')
+                .then(function (r) { return r.ok ? r.text() : ''; })
+                .then(function (text) {
+                    if (!text) return null;
+                    var parsed = parseFrontMatter(text);
+                    var d = parsed.data;
+                    return {
+                        title: d.title, image: d.image, details: d.details,
+                        stock: d.stock, sizes: d.sizes, url: d.url, order: d.order,
+                        blurb: firstParagraph(parsed.body)
+                    };
+                })
+                .catch(function () { return null; });
+        })).then(function (items) {
+            /* A piece that fails to load is skipped rather than left as a hole in the
+               grid. If none of them load at all, the store CTA takes over below. */
+            var live = items.filter(Boolean);
+            if (!live.length) throw new Error('no drop files could be read');
+            live.sort(function (a, b) { return rank(a.order) - rank(b.order); });
+            container.setAttribute('aria-busy', 'false');
+            container.innerHTML = live.map(cardHTML).join('');
+        }).catch(function (err) {
+            showState('Inventory is offline',
+                'The current drop could not be loaded just now. The full range is always live on the store.',
+                '<a class="btn" href="' + STORE_URL + '" target="_blank" rel="noopener"><span>Visit the store</span><i>&#8599;</i></a>');
+            if (window.console) console.warn('[TRB]', err);
+        });
+    };
+
+    if (container) loadProducts();
+})();
+</script>
+
 <!-- Begin SlickText Tag -->
 <script>
 window.sTagConfig = window.sTagConfig || [];
@@ -203,4 +938,5 @@ sTag('bsk', '0dead03e4081e519b611d757690e0e99');
 </script>
 <script async src="https://static.slicktext.com/s-tag/init.js" type="module"></script>
 <!-- End SlickText Tag -->
+</body>
 </html>

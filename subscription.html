@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership — Thee Royal Brand | Royal Member + VIP Texts</title>
+    <meta name="description" content="Two ways into Thee Royal Brand. Free VIP text alerts for every drop, or become a Royal Member and fund the movement. First access to garments, launches and store openings.">
+    <meta name="theme-color" content="#0b0a08">
+    <link rel="icon" href="/.netlify/images?url=/images/uploads/transparent-brand-logo.png&amp;w=64&amp;fm=webp" type="image/webp">
+    <meta property="og:title" content="Membership — Thee Royal Brand">
+    <meta property="og:description" content="Free VIP texts, or join the Inner Circle. First access to every drop.">
+    <meta property="og:image" content="https://theeroyalbrand.com/.netlify/images?url=/images/uploads/jbg-phantom-set.png&amp;w=1200&amp;h=630&amp;fit=cover&amp;fm=jpg&amp;q=78">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://theeroyalbrand.com/subscription">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://theeroyalbrand.com/subscription">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;0,6..96,700;1,6..96,400&family=Chivo:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Same tokens as the homepage so the two pages read as one site. */
+        :root {
+            --ink:      #0b0a08;
+            --ink-2:    #100e0b;
+            --ink-3:    #17140f;
+            --line:     #2a2620;
+            --line-2:   #3c362c;
+            --bone:     #f2ede3;
+            --bone-2:   #c6bfb1;
+            --dim:      #8d8474;
+            --gold:     #c9a227;
+            --gold-2:   #e3c76d;
+
+            --ease:  cubic-bezier(.16, 1, .3, 1);
+            --pad:   clamp(20px, 5vw, 72px);
+            --maxw:  1360px;
+            --nav-h: 74px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); }
+
+        body {
+            background: var(--ink);
+            color: var(--bone);
+            font-family: 'Chivo', system-ui, sans-serif;
+            font-weight: 300;
+            line-height: 1.65;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        ::selection { background: var(--gold); color: var(--ink); }
+
+        .grain, .vignette { position: fixed; inset: 0; pointer-events: none; }
+        .grain {
+            z-index: 9998; opacity: .05; mix-blend-mode: overlay;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+        .vignette { z-index: 9997; box-shadow: inset 0 0 min(240px, 18vw) rgba(0,0,0,.75); }
+
+        .display {
+            font-family: 'Bodoni Moda', Didot, Georgia, serif;
+            font-weight: 700; line-height: .92; letter-spacing: -.02em; text-transform: uppercase;
+        }
+        .eyebrow {
+            font-family: 'Azeret Mono', ui-monospace, monospace;
+            font-size: .68rem; font-weight: 500; letter-spacing: .28em; text-transform: uppercase;
+            color: var(--gold); display: flex; align-items: center; gap: 14px;
+        }
+        .eyebrow::after { content: ''; height: 1px; flex: 1; background: linear-gradient(90deg, var(--line-2), transparent); }
+        .meta { font-family: 'Azeret Mono', ui-monospace, monospace; font-size: .66rem; letter-spacing: .2em; text-transform: uppercase; color: var(--dim); }
+        .lede { color: var(--bone-2); font-size: clamp(.98rem, 1.5vw, 1.1rem); max-width: 56ch; }
+
+        .skip {
+            position: absolute; left: -9999px; top: 0; z-index: 10000;
+            background: var(--gold); color: var(--ink); padding: 12px 20px;
+            font-family: 'Azeret Mono', monospace; font-size: .7rem; letter-spacing: .16em; text-transform: uppercase;
+        }
+        .skip:focus { left: 12px; top: 12px; }
+
+        /* ---------- Nav ---------- */
+        .nav {
+            position: sticky; top: 0; z-index: 500; height: var(--nav-h);
+            display: flex; align-items: center; justify-content: space-between; padding: 0 var(--pad);
+            border-bottom: 1px solid transparent;
+            transition: background .5s var(--ease), border-color .5s var(--ease);
+        }
+        .nav.is-stuck { background: rgba(11,10,8,.82); backdrop-filter: blur(14px) saturate(140%); border-bottom-color: var(--line); }
+        .wordmark { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--bone); }
+        .wordmark img { width: 30px; height: 30px; object-fit: contain; }
+        .wordmark span { font-family: 'Bodoni Moda', serif; font-weight: 600; font-size: 1.02rem; letter-spacing: .16em; text-transform: uppercase; white-space: nowrap; }
+        .nav-links { display: flex; align-items: center; gap: 34px; }
+        .nav-links a {
+            position: relative; color: var(--bone-2); text-decoration: none;
+            font-family: 'Azeret Mono', monospace; font-size: .68rem; letter-spacing: .18em;
+            text-transform: uppercase; padding: 6px 0; transition: color .3s var(--ease);
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; left: 0; bottom: 0; height: 1px; width: 100%;
+            background: var(--gold); transform: scaleX(0); transform-origin: left; transition: transform .45s var(--ease);
+        }
+        .nav-links a:hover { color: var(--bone); }
+        .nav-links a:hover::after { transform: scaleX(1); }
+        .nav-links a[aria-current="page"] { color: var(--gold); }
+        .nav-links a[aria-current="page"]::after { transform: scaleX(1); }
+
+        .burger { display: none; width: 42px; height: 42px; border: 1px solid var(--line-2); background: transparent; cursor: pointer; position: relative; }
+        .burger i { position: absolute; left: 11px; width: 18px; height: 1px; background: var(--bone); transition: transform .4s var(--ease), opacity .3s; }
+        .burger i:nth-child(1) { top: 15px; } .burger i:nth-child(2) { top: 20px; } .burger i:nth-child(3) { top: 25px; }
+        body.menu-open .burger i:nth-child(1) { transform: translateY(5px) rotate(45deg); }
+        body.menu-open .burger i:nth-child(2) { opacity: 0; }
+        body.menu-open .burger i:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
+
+        /* ---------- Page head ---------- */
+        .masthead { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); }
+        .masthead::before {
+            content: ''; position: absolute; inset: 0; z-index: 0;
+            background: radial-gradient(58% 62% at 14% 8%, rgba(201,162,39,.13), transparent 68%);
+        }
+        .masthead-in {
+            position: relative; z-index: 1; max-width: var(--maxw); margin: 0 auto;
+            padding: clamp(56px, 8vw, 112px) var(--pad) clamp(48px, 6vw, 84px);
+            display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, .9fr);
+            gap: clamp(28px, 4vw, 64px); align-items: end;
+        }
+        .masthead h1 { font-size: clamp(2.6rem, 8.5vw, 6.2rem); margin: 20px 0 26px; }
+        .masthead h1 em { font-style: italic; font-weight: 400; color: var(--gold); display: block; }
+        .compare { border-left: 1px solid var(--line-2); padding-left: clamp(18px, 2vw, 26px); }
+        .compare-row { padding: 13px 0; border-bottom: 1px solid var(--line); }
+        .compare-row:last-child { border-bottom: 0; }
+        .compare-row dt { font-family: 'Azeret Mono', monospace; font-size: .58rem; letter-spacing: .22em; text-transform: uppercase; color: var(--dim); }
+        .compare-row dd { font-family: 'Bodoni Moda', serif; font-size: 1rem; margin-top: 4px; }
+
+        /* ---------- Tiers ---------- */
+        .tiers {
+            max-width: var(--maxw); margin: 0 auto;
+            padding: clamp(56px, 7vw, 104px) var(--pad);
+            display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.02fr);
+            gap: clamp(22px, 3vw, 40px); align-items: start;
+        }
+        .tier { position: relative; border: 1px solid var(--line); background: var(--ink-2); padding: clamp(24px, 3vw, 40px); }
+        .tier.is-featured { border-color: var(--gold); background: linear-gradient(172deg, rgba(201,162,39,.07) 0%, var(--ink-2) 46%); }
+        .tier.is-featured::before, .tier.is-featured::after { content: ''; position: absolute; width: 13px; height: 13px; border: 1px solid var(--gold); }
+        .tier.is-featured::before { top: -1px; left: -1px; border-right: 0; border-bottom: 0; }
+        .tier.is-featured::after { bottom: -1px; right: -1px; border-left: 0; border-top: 0; }
+
+        .tier-badge {
+            display: inline-block; font-family: 'Azeret Mono', monospace; font-size: .56rem;
+            letter-spacing: .2em; text-transform: uppercase; padding: 7px 11px;
+            border: 1px solid var(--line-2); color: var(--bone-2); margin-bottom: 20px;
+        }
+        .tier.is-featured .tier-badge { border-color: var(--gold); background: var(--gold); color: var(--ink); font-weight: 500; }
+        .tier h2 { font-family: 'Bodoni Moda', serif; font-weight: 600; font-size: clamp(1.5rem, 3vw, 2.1rem); text-transform: uppercase; letter-spacing: .01em; line-height: 1.1; }
+        .tier > p { color: var(--bone-2); font-size: .93rem; margin-top: 14px; }
+        .tier-price { font-family: 'Bodoni Moda', serif; font-size: 1.15rem; color: var(--gold); margin-top: 12px; letter-spacing: .02em; }
+
+        .perks { list-style: none; margin-top: 26px; border-top: 1px solid var(--line); }
+        .perks li { display: flex; gap: 15px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: .89rem; color: var(--bone-2); }
+        .perks li::before { content: attr(data-n); font-family: 'Azeret Mono', monospace; font-size: .58rem; color: var(--gold); letter-spacing: .1em; padding-top: 4px; flex: none; }
+
+        .fineprint { font-size: .77rem; color: var(--dim); line-height: 1.7; margin-top: 20px; }
+        .fineprint strong { color: var(--bone); font-weight: 400; }
+
+        /* ---------- SlickText ---------- */
+        .st-embed { position: relative; border: 1px solid var(--line-2); background: var(--ink); padding: 10px; min-height: 340px; margin-top: 24px; }
+        .st-embed iframe { display: block; width: 100%; min-height: 320px; border: 0; }
+
+        /* ---------- Buttons ---------- */
+        .btn {
+            position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+            font-family: 'Azeret Mono', monospace; font-size: .7rem; font-weight: 500;
+            letter-spacing: .2em; text-transform: uppercase; text-decoration: none;
+            padding: 17px 30px; border: 1px solid var(--gold); background: var(--gold); color: var(--ink);
+            cursor: pointer; overflow: hidden; width: 100%;
+            transition: color .45s var(--ease), border-color .45s var(--ease);
+        }
+        .btn::before { content: ''; position: absolute; inset: 0; background: var(--ink); z-index: 0; transform: scaleY(0); transform-origin: bottom; transition: transform .5s var(--ease); }
+        .btn > * { position: relative; z-index: 1; }
+        .btn:hover { color: var(--gold); }
+        .btn:hover::before { transform: scaleY(1); }
+        .btn-ghost { background: transparent; color: var(--bone); border-color: var(--line-2); }
+        .btn-ghost::before { background: var(--bone); }
+        .btn-ghost:hover { color: var(--ink); border-color: var(--bone); }
+        .btn i { font-style: normal; transition: transform .4s var(--ease); }
+        .btn:hover i { transform: translate(3px, -3px); }
+        .tier-cta { margin-top: 28px; display: grid; gap: 12px; }
+
+        /* ---------- Closing note ---------- */
+        .coda { border-top: 1px solid var(--line); background: var(--ink-2); }
+        .coda-in { max-width: var(--maxw); margin: 0 auto; padding: clamp(48px, 6vw, 84px) var(--pad); text-align: center; }
+        .coda p {
+            font-family: 'Bodoni Moda', serif; font-style: italic; font-weight: 400;
+            font-size: clamp(1.1rem, 2.6vw, 1.7rem); color: var(--bone-2); max-width: 32ch; margin: 0 auto;
+            line-height: 1.35;
+        }
+        .coda span { display: block; margin-top: 20px; }
+
+        /* ---------- Footer ---------- */
+        .foot { border-top: 1px solid var(--line); }
+        .foot-in { max-width: var(--maxw); margin: 0 auto; padding: clamp(48px, 6vw, 76px) var(--pad) 30px; display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(2, minmax(0, .8fr)); gap: clamp(28px, 4vw, 56px); }
+        .foot h4 { font-family: 'Azeret Mono', monospace; font-size: .6rem; letter-spacing: .22em; text-transform: uppercase; color: var(--dim); margin-bottom: 18px; font-weight: 500; }
+        .foot ul { list-style: none; display: grid; gap: 11px; }
+        .foot a { color: var(--bone-2); text-decoration: none; font-size: .88rem; transition: color .3s; }
+        .foot a:hover { color: var(--gold); }
+        .foot-mark { font-family: 'Bodoni Moda', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 700; text-transform: uppercase; line-height: .95; }
+        .foot-mark em { font-style: italic; font-weight: 400; color: var(--gold); }
+        .foot-bar { max-width: var(--maxw); margin: 0 auto; padding: 20px var(--pad) 40px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 12px 28px; justify-content: space-between; }
+
+        /* ---------- Reveal ---------- */
+        .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
+        .reveal.in { opacity: 1; transform: none; }
+        .rise { opacity: 0; transform: translateY(20px); animation: rise .95s var(--ease) forwards; }
+        @keyframes rise { to { opacity: 1; transform: none; } }
+        .d1 { animation-delay: .1s } .d2 { animation-delay: .24s } .d3 { animation-delay: .38s } .d4 { animation-delay: .52s }
+
+        @media (max-width: 1000px) {
+            .masthead-in, .tiers, .foot-in { grid-template-columns: 1fr; }
+            .compare { border-left: 0; border-top: 1px solid var(--line-2); padding-left: 0; padding-top: 20px; }
+        }
+        @media (max-width: 780px) {
+            .nav-links {
+                position: fixed; inset: var(--nav-h) 0 0; flex-direction: column; justify-content: center;
+                gap: 28px; background: rgba(11,10,8,.97); backdrop-filter: blur(20px);
+                transform: translateY(-102%); transition: transform .6s var(--ease); z-index: 490;
+            }
+            body.menu-open .nav-links { transform: none; }
+            .nav-links a { font-size: .82rem; letter-spacing: .24em; }
+            .burger { display: block; z-index: 500; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+            .reveal, .rise { opacity: 1; transform: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+<a class="skip" href="#tiers">Skip to content</a>
+
+<header class="nav" id="nav">
+    <a class="wordmark" href="/" aria-label="Thee Royal Brand, home">
+        <img src="/.netlify/images?url=/images/uploads/transparent-brand-logo.png&amp;w=60&amp;fm=webp" alt="" width="30" height="30">
+        <span>Thee Royal Brand</span>
+    </a>
+    <nav class="nav-links" id="nav-links">
+        <a href="/#shop">Apparel</a>
+        <a href="/#music">Royalty Records</a>
+        <a href="/#business">Enterprise</a>
+        <a href="/subscription" aria-current="page">Membership</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+        <i></i><i></i><i></i>
+    </button>
+</header>
+
+<section class="masthead">
+    <div class="masthead-in">
+        <div>
+            <p class="eyebrow rise d1"><span>The Royal Club</span></p>
+            <h1 class="display rise d2">Join The<em>Royal Family</em></h1>
+            <p class="lede rise d3">Two ways in. Free VIP texts for the drops, or go paid and fund the movement.
+                Both get you first access to new clothing pieces, product launches and store front openings.
+                Consistent drops, consistent projects.</p>
+        </div>
+        <dl class="compare rise d4">
+            <div class="compare-row">
+                <dt>Free tier</dt>
+                <dd>VIP text alerts</dd>
+            </div>
+            <div class="compare-row">
+                <dt>Paid tier</dt>
+                <dd>Inner Circle membership</dd>
+            </div>
+            <div class="compare-row">
+                <dt>Leave anytime</dt>
+                <dd>Reply STOP, or cancel from your receipt</dd>
+            </div>
+        </dl>
+    </div>
+</section>
+
+<section class="tiers" id="tiers">
+
+    <!-- ---------- FREE: SlickText VIP text list ---------- -->
+    <div class="tier reveal">
+        <span class="tier-badge">Free &middot; VIP text list</span>
+        <h2>Get On The Waitlist</h2>
+        <p>Royal Juice, Beauty Lounge and Out Of Sight Out Of Mind alerts. No spam &mdash; a text when
+            something actually goes live.</p>
+        <p class="tier-price">No cost</p>
+
+        <!-- SlickText inline sign-up form. The script replaces itself with the form
+             iframe, so it must stay exactly where the form should appear. -->
+        <div class="st-embed" id="slicktext-embed">
+            <script async src="https://static.slicktext.com/forms/scripts/embed/eyJ1cmwiOiJodHRwczpcL1wvc3Rmb3Jtcy5jb1wvMzA0MjJjMGZiYjU3MzY5OTAwN2EyZDEyOTNkMDIyMjMifQ"></script>
+        </div>
+
+        <p class="fineprint">
+            <strong>Or text ROYAL to 833-508-0351.</strong><br>
+            By entering your phone you agree to receive recurring automated marketing texts from Thee Royal Brand.
+            Reply STOP to cancel. Msg &amp; data rates may apply.
+        </p>
+
+        <ul class="perks">
+            <li data-n="01">First to know on every new product drop</li>
+            <li data-n="02">First bookings at Beauty Lounge PHX</li>
+            <li data-n="03">Out Of Sight Out Of Mind pre-save and track previews</li>
+        </ul>
+    </div>
+
+    <!-- ---------- PAID: Big Cartel membership ---------- -->
+    <div class="tier is-featured reveal">
+        <span class="tier-badge">Paid &middot; Inner Circle</span>
+        <h2>Become A Royal Member</h2>
+        <p>Monthly support that goes straight back into the brand. Pause, increase or cancel at any time
+            from your email receipt.</p>
+        <p class="tier-price">Monthly &middot; secured by Stripe</p>
+
+        <ul class="perks">
+            <li data-n="01">Early access to Royal Brand launches before they go public</li>
+            <li data-n="02">Member-only discount on shop.theeroyalbrand.com</li>
+            <li data-n="03">Private Out Of Sight Out Of Mind visuals and behind-the-scenes</li>
+            <li data-n="04">First invite to the Royal Juice tasting and Beauty Lounge</li>
+            <li data-n="05">Your name on the All Access VIP list</li>
+        </ul>
+
+        <div class="tier-cta">
+            <a class="btn" href="https://shop.theeroyalbrand.com/subscribe" target="_blank" rel="noopener">
+                <span>Become a Royal Member</span><i>&#8599;</i>
+            </a>
+            <a class="btn btn-ghost" href="/shop/" target="_blank" rel="noopener">
+                <span>Shop the drop</span><i>&#8599;</i>
+            </a>
+        </div>
+
+        <p class="fineprint">Checkout opens on shop.theeroyalbrand.com/subscribe &mdash; the membership page
+            configured in Big Cartel, secured by Stripe. Manage or cancel your subscription from your email
+            receipt at any time.</p>
+    </div>
+
+</section>
+
+<section class="coda">
+    <div class="coda-in reveal">
+        <p>Some things can&rsquo;t be seen. But everything is felt.
+            <span class="meta">Thee Royal Brand</span>
+        </p>
+    </div>
+</section>
+
+<footer class="foot">
+    <div class="foot-in">
+        <div>
+            <p class="foot-mark">Just Be<br><em>Great</em></p>
+            <p class="fineprint" style="max-width: 34ch;">Premium heavyweight street garments. Phoenix, Arizona
+                &mdash; shipping worldwide.</p>
+        </div>
+        <div>
+            <h4>Elsewhere</h4>
+            <ul>
+                <li><a href="/">Main site</a></li>
+                <li><a href="/shop/" target="_blank" rel="noopener">Shop</a></li>
+                <li><a href="/OOSOOM" target="_blank" rel="noopener">OOSOOM project &mdash; Aug 31</a></li>
+                <li><a href="https://www.instagram.com/theeroyalbrand" target="_blank" rel="noopener">Instagram &mdash; @theeroyalbrand</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <ul>
+                <li><a href="mailto:theeroyalbrand@theeroyalbrand.com">theeroyalbrand@theeroyalbrand.com</a></li>
+                <li><a href="sms:8335080351">833-508-0351</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="foot-bar">
+        <span class="meta">&copy; <span id="year">2026</span> Thee Royal Brand</span>
+        <span class="meta">Checkout secured by Big Cartel &middot; Stripe</span>
+    </div>
+</footer>
+
+<script>
+(function () {
+    'use strict';
+    var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    var nav = document.getElementById('nav');
+    var onScroll = function () { nav.classList.toggle('is-stuck', window.scrollY > 24); };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    var burger = document.getElementById('burger');
+    var navLinks = document.getElementById('nav-links');
+    var setMenu = function (open) {
+        document.body.classList.toggle('menu-open', open);
+        burger.setAttribute('aria-expanded', String(open));
+    };
+    burger.addEventListener('click', function () {
+        setMenu(!document.body.classList.contains('menu-open'));
+    });
+    navLinks.addEventListener('click', function (e) { if (e.target.tagName === 'A') setMenu(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') setMenu(false); });
+
+    var targets = document.querySelectorAll('.reveal');
+    if (reduced || !('IntersectionObserver' in window)) {
+        targets.forEach(function (el) { el.classList.add('in'); });
+    } else {
+        var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('in');
+                io.unobserve(entry.target);
+            });
+        }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
+        targets.forEach(function (el) { io.observe(el); });
+    }
+})();
+</script>
+
+<!-- Begin SlickText Tag -->
+<script>
+window.sTagConfig = window.sTagConfig || [];
+function sTag(){window.sTagConfig.push(arguments);}
+sTag('bid', 33481);
+sTag('bsk', '0dead03e4081e519b611d757690e0e99');
+</script>
+<script async src="https://static.slicktext.com/s-tag/init.js" type="module"></script>
+<!-- End SlickText Tag -->
+</body>
+</html>

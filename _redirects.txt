@@ -1,0 +1,4 @@
+/shop/* https://shop.theeroyalbrand.com/:splat 301!
+/OOSOOM https://outofsightoutofmindroyalacess.netlify.app/ 301!
+/OOSOOM/* https://outofsightoutofmindroyalacess.netlify.app/:splat 301!
+/subscription /subscription.html 200

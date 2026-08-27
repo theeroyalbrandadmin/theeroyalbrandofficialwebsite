@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Out Of Sight — Page Not Found | Thee Royal Brand</title>
+    <meta name="robots" content="noindex, follow">
+    <meta name="theme-color" content="#0b0a08">
+    <link rel="icon" href="/.netlify/images?url=/images/uploads/transparent-brand-logo.png&amp;w=64&amp;fm=webp" type="image/webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@400;500&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;0,6..96,700;1,6..96,400&family=Chivo:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Same tokens as index.html / subscription.html so all three read as one site. */
+        :root {
+            --ink:      #0b0a08;
+            --ink-2:    #100e0b;
+            --ink-3:    #17140f;
+            --line:     #2a2620;
+            --line-2:   #3c362c;
+            --bone:     #f2ede3;
+            --bone-2:   #c6bfb1;
+            --dim:      #8d8474;
+            --gold:     #c9a227;
+            --gold-2:   #e3c76d;
+
+            --ease:  cubic-bezier(.16, 1, .3, 1);
+            --pad:   clamp(20px, 5vw, 72px);
+            --maxw:  1360px;
+            --nav-h: 74px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: var(--ink);
+            color: var(--bone);
+            font-family: 'Chivo', system-ui, sans-serif;
+            font-weight: 300;
+            line-height: 1.65;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        ::selection { background: var(--gold); color: var(--ink); }
+
+        .grain, .vignette { position: fixed; inset: 0; pointer-events: none; }
+        .grain {
+            z-index: 9998; opacity: .05; mix-blend-mode: overlay;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
+        .vignette { z-index: 9997; box-shadow: inset 0 0 min(240px, 18vw) rgba(0,0,0,.75); }
+
+        .eyebrow {
+            font-family: 'Azeret Mono', ui-monospace, monospace;
+            font-size: .68rem; font-weight: 500; letter-spacing: .28em; text-transform: uppercase;
+            color: var(--gold); display: flex; align-items: center; gap: 14px;
+        }
+        .eyebrow::after { content: ''; height: 1px; flex: 1; background: linear-gradient(90deg, var(--line-2), transparent); }
+        .meta { font-family: 'Azeret Mono', ui-monospace, monospace; font-size: .66rem; letter-spacing: .2em; text-transform: uppercase; color: var(--dim); }
+
+        /* ---------- Nav ---------- */
+        .nav {
+            flex: none; height: var(--nav-h); display: flex; align-items: center;
+            justify-content: space-between; padding: 0 var(--pad);
+            border-bottom: 1px solid var(--line); position: relative; z-index: 5;
+        }
+        .wordmark { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--bone); }
+        .wordmark img { width: 30px; height: 30px; object-fit: contain; }
+        .wordmark span { font-family: 'Bodoni Moda', serif; font-weight: 600; font-size: 1.02rem; letter-spacing: .16em; text-transform: uppercase; white-space: nowrap; }
+        .nav .meta { display: none; }
+        @media (min-width: 620px) { .nav .meta { display: block; } }
+
+        /* ---------- Body ---------- */
+        main { flex: 1; position: relative; display: flex; align-items: center; overflow: hidden; }
+        main::before {
+            content: ''; position: absolute; inset: 0; z-index: 0;
+            background: radial-gradient(60% 64% at 16% 12%, rgba(201,162,39,.12), transparent 70%);
+        }
+        /* Oversized ghost numeral — the "out of sight" idea, barely visible on purpose. */
+        .ghost {
+            position: absolute; z-index: 0; right: -.06em; bottom: -.28em;
+            font-family: 'Bodoni Moda', Didot, Georgia, serif; font-weight: 700;
+            font-size: clamp(14rem, 44vw, 34rem); line-height: 1;
+            color: transparent; -webkit-text-stroke: 1px var(--line-2);
+            user-select: none; pointer-events: none;
+        }
+        .wrap {
+            position: relative; z-index: 1; width: 100%; max-width: var(--maxw); margin: 0 auto;
+            padding: clamp(48px, 8vw, 96px) var(--pad);
+            display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, .8fr);
+            gap: clamp(32px, 5vw, 72px); align-items: center;
+        }
+        h1 {
+            font-family: 'Bodoni Moda', Didot, Georgia, serif; font-weight: 700;
+            font-size: clamp(2.3rem, 7vw, 5rem); line-height: .95; letter-spacing: -.02em;
+            text-transform: uppercase; margin: 22px 0 24px;
+        }
+        h1 em { font-style: italic; font-weight: 400; color: var(--gold); display: block; }
+        .lede { color: var(--bone-2); font-size: clamp(.98rem, 1.5vw, 1.1rem); max-width: 48ch; }
+
+        /* ---------- Ways out ---------- */
+        .ways { border-top: 1px solid var(--line-2); }
+        .ways a {
+            display: flex; align-items: baseline; gap: 16px; padding: 17px 2px;
+            border-bottom: 1px solid var(--line); text-decoration: none; color: var(--bone);
+            transition: color .35s var(--ease), padding-left .35s var(--ease);
+        }
+        .ways a:hover { color: var(--gold); padding-left: 10px; }
+        .ways b {
+            font-family: 'Azeret Mono', monospace; font-size: .58rem; font-weight: 500;
+            letter-spacing: .18em; color: var(--gold); flex: none;
+        }
+        .ways span { font-family: 'Bodoni Moda', serif; font-size: 1.06rem; text-transform: uppercase; letter-spacing: .03em; }
+        .ways i { font-style: normal; margin-left: auto; color: var(--dim); transition: transform .35s var(--ease); }
+        .ways a:hover i { transform: translate(3px, -3px); color: var(--gold); }
+
+        /* ---------- Footer ---------- */
+        .foot {
+            flex: none; border-top: 1px solid var(--line); padding: 22px var(--pad);
+            display: flex; flex-wrap: wrap; gap: 10px 26px; justify-content: space-between;
+            position: relative; z-index: 5;
+        }
+
+        .rise { opacity: 0; transform: translateY(20px); animation: rise .95s var(--ease) forwards; }
+        @keyframes rise { to { opacity: 1; transform: none; } }
+        .d1 { animation-delay: .08s } .d2 { animation-delay: .2s } .d3 { animation-delay: .32s } .d4 { animation-delay: .46s }
+
+        @media (max-width: 900px) {
+            .wrap { grid-template-columns: 1fr; align-items: start; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+            .rise { opacity: 1; transform: none; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<header class="nav">
+    <a class="wordmark" href="/" aria-label="Thee Royal Brand, home">
+        <img src="/.netlify/images?url=/images/uploads/transparent-brand-logo.png&amp;w=60&amp;fm=webp" alt="" width="30" height="30">
+        <span>Thee Royal Brand</span>
+    </a>
+    <span class="meta">Error 404</span>
+</header>
+
+<main>
+    <span class="ghost" aria-hidden="true">404</span>
+    <div class="wrap">
+        <div>
+            <p class="eyebrow rise d1"><span>404 &middot; Not found</span></p>
+            <h1 class="rise d2">Out Of Sight<em>Out Of Mind</em></h1>
+            <p class="lede rise d3">This page can&rsquo;t be seen &mdash; wrong link, or it moved.
+                Everything that&rsquo;s still here is one tap away.</p>
+        </div>
+        <nav class="ways rise d4" aria-label="Ways out">
+            <a href="/"><b>01</b><span>Main site</span><i>&#8599;</i></a>
+            <a href="/#shop"><b>02</b><span>The apparel</span><i>&#8599;</i></a>
+            <a href="/subscription"><b>03</b><span>Membership</span><i>&#8599;</i></a>
+            <a href="/shop/" target="_blank" rel="noopener"><b>04</b><span>Shop the drop</span><i>&#8599;</i></a>
+            <a href="/OOSOOM" target="_blank" rel="noopener"><b>05</b><span>OOSOOM project</span><i>&#8599;</i></a>
+        </nav>
+    </div>
+</main>
+
+<footer class="foot">
+    <span class="meta">&copy; <span id="year">2026</span> Thee Royal Brand &middot; Phoenix, AZ</span>
+    <span class="meta">Some things can&rsquo;t be seen. But everything is felt.</span>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
